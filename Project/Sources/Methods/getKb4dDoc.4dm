@@ -9,6 +9,7 @@ C_LONGINT:C283($httpStatusCode)
 C_LONGINT:C283($count;$sent;$first;$received)
 C_OBJECT:C1216($obj;$objB)
 C_LONGINT:C283($pos4DSID;$posQstring)
+C_TEXT:C284($currErrMethode)
 
 If (Count parameters:C259>0)
 	$winRef:=$1
@@ -23,7 +24,18 @@ If ($winRef#0)
 	$urlKbSearch:="https://kb.4d.com/search?mode=rest&query="+$searchValue+"&type=All%20Solutions&version=All%20versions&product=All%20products&time=All&pp=&cc="
 	ARRAY TEXT:C222($aHeaderNames;0)
 	ARRAY TEXT:C222($aHeaderValues;0)
+	
+	OK:=0
+	Error:=0
+	$currErrMethode:=Method called on error:C704
+	ON ERR CALL:C155("yErrCallNum")
 	$httpStatusCode:=HTTP Get:C1157($urlKbSearch;$responseText;$aHeaderNames;$aHeaderValues;*)
+	If ((OK#0) | (Error#0))
+		$httpStatusCode:=HTTP Get:C1157($urlKbSearch;$responseText;$aHeaderNames;$aHeaderValues;*)
+	End if 
+	ON ERR CALL:C155($currErrMethode)
+	OK:=0
+	Error:=0
 	
 	// HTTP response status codes:
 	// - Informational responses (100–199)
