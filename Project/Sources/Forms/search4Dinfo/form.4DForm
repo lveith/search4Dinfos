@@ -153,7 +153,7 @@
 						"onWindowOpeningDenied"
 					]
 				},
-				"oCurrPageUrl": {
+				"oCurrPageUrlGoogle": {
 					"type": "input",
 					"left": 260,
 					"top": 30,
@@ -163,7 +163,7 @@
 					"contextMenu": "none",
 					"fill": "automatic",
 					"placeholder": "current page url",
-					"dataSource": "Form:C1466.currUrl",
+					"dataSource": "Form:C1466.currUrlGoogle",
 					"sizingX": "grow",
 					"borderStyle": "none"
 				},
@@ -187,9 +187,9 @@
 				"oColPageContGoogle": {
 					"type": "listbox",
 					"left": 6,
-					"top": 314,
+					"top": 294,
 					"width": 239,
-					"height": 384,
+					"height": 404,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -201,7 +201,8 @@
 					"resizingMode": "legacy",
 					"listboxType": "collection",
 					"dataSource": "Form:C1466.colPageContGoogle",
-					"rowHeight": "2em",
+					"rowHeight": "4em",
+					"headerHeight": "1em",
 					"columns": [
 						{
 							"header": {
@@ -214,7 +215,7 @@
 							},
 							"width": 66,
 							"minWidth": 66,
-							"maxWidth": 66,
+							"maxWidth": 100,
 							"dataSource": "This:C1470.typ",
 							"verticalAlign": "middle",
 							"truncateMode": "none",
@@ -232,7 +233,8 @@
 							"dataSource": "This:C1470.content",
 							"verticalAlign": "middle",
 							"truncateMode": "none",
-							"wordwrap": "normal"
+							"wordwrap": "normal",
+							"minWidth": 20
 						}
 					]
 				},
@@ -461,9 +463,9 @@
 				"oColPageContGithub": {
 					"type": "listbox",
 					"left": 6,
-					"top": 314,
+					"top": 294,
 					"width": 239,
-					"height": 384,
+					"height": 404,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -475,7 +477,7 @@
 					"resizingMode": "legacy",
 					"listboxType": "collection",
 					"dataSource": "Form:C1466.colPageContGithub",
-					"rowHeight": "2em",
+					"rowHeight": "4em",
 					"columns": [
 						{
 							"header": {
@@ -488,7 +490,7 @@
 							},
 							"width": 66,
 							"minWidth": 66,
-							"maxWidth": 66,
+							"maxWidth": 100,
 							"dataSource": "This:C1470.typ",
 							"verticalAlign": "middle",
 							"truncateMode": "none",
@@ -1035,7 +1037,7 @@
 			}
 		}
 	],
-	"geometryStamp": 3097,
+	"geometryStamp": 3102,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
