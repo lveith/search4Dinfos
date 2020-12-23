@@ -5,6 +5,11 @@ C_OBJECT:C1216($obj)
 C_TEXT:C284($url;$description)
 C_LONGINT:C283($errorCode)
 
+If (Form event code:C388=On Load:K2:1)
+	Form:C1466.lastWaEvents:=""
+End if 
+Form:C1466.lastWaEvents:="#"+String:C10(FORM Event:C1606.code)+" ("+FORM Event:C1606.description+") "+FORM Event:C1606.objectName+"\r"
+
 Case of 
 	: (Form event code:C388=On Begin URL Loading:K2:45)
 		
@@ -31,7 +36,11 @@ Case of
 				$js:=$js+"document.getElementById('taw').style.display='none';"
 				$js:=$js+"document.getElementById('cnt').style.paddingTop='0';"
 				$js:=$js+"document.querySelectorAll('#footcnt #fbar > div.fbar > div')[0].style.marginLeft='8px';"
-				$js:=$js+"document.querySelectorAll('#footcnt #fbar > div.fbar > span')[0].style.marginLeft='8px'"
+				$js:=$js+"document.querySelectorAll('#footcnt #fbar > div.fbar > span')[0].style.marginLeft='8px';"
+				$js:=$js+"document.querySelectorAll('.CvDJxb')[0].style.minWidth='800px';"
+				$js:=$js+"document.getElementById('appbar').style.minWidth='800px';"
+				$js:=$js+"document.getElementById('rhs').style.display='none'"
+				
 				$resultTxt:=WA Evaluate JavaScript:C1029(*;"oWaGoogle";$js;Is text:K8:3)
 				
 			: (Form:C1466.currUrlGoogle="https://xyz")

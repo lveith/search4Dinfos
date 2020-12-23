@@ -2,7 +2,7 @@
 	"bars": [
 		{
 			"id": 1,
-			"name": "Barre #1",
+			"name": "Menubar #1",
 			"items": [
 				{
 					"link": 32001
@@ -21,6 +21,10 @@
 			"link": 32001,
 			"title": ":xliff:CommonMenuFile",
 			"items": [
+				{
+					"title": "Start search4Dinfos",
+					"method": "search4DinfosStartMain"
+				},
 				{
 					"title": ":xliff:CommonMenuItemQuit",
 					"shortcutAccel": true,

@@ -38,7 +38,7 @@
 					"type": "button",
 					"text": "#",
 					"top": 1,
-					"left": 941,
+					"left": 981,
 					"width": 27,
 					"height": 24,
 					"events": [
@@ -55,7 +55,7 @@
 					"type": "button",
 					"text": "✗",
 					"top": 1,
-					"left": 974,
+					"left": 1014,
 					"width": 27,
 					"height": 24,
 					"events": [
@@ -76,7 +76,7 @@
 				"oBtnChooseFormPage": {
 					"type": "button",
 					"top": 1,
-					"left": 794,
+					"left": 834,
 					"width": 140,
 					"height": 24,
 					"sizingX": "move",
@@ -91,7 +91,7 @@
 					"events": [
 						"onClick"
 					],
-					"right": 934,
+					"right": 974,
 					"fontWeight": "bold"
 				}
 			}
@@ -105,17 +105,18 @@
 					"width": 243,
 					"height": 75,
 					"stroke": "transparent",
-					"fill": "#dda0dd"
+					"fill": "#dda0dd",
+					"sizingX": "grow"
 				},
 				"Viereck4": {
 					"type": "rectangle",
 					"top": 0,
 					"left": 0,
-					"width": 794,
+					"width": 834,
 					"height": 25,
 					"stroke": "transparent",
 					"fill": "#FACA3E",
-					"right": 794,
+					"right": 834,
 					"sizingX": "grow"
 				},
 				"Viereck2": {
@@ -132,7 +133,7 @@
 					"type": "webArea",
 					"left": 260,
 					"top": 54,
-					"width": 741,
+					"width": 781,
 					"height": 644,
 					"method": "ObjectMethods/oWaGoogle.4dm",
 					"webEngine": "embedded",
@@ -155,9 +156,9 @@
 				},
 				"oCurrPageUrlGoogle": {
 					"type": "input",
-					"left": 260,
+					"left": 284,
 					"top": 30,
-					"width": 718,
+					"width": 757,
 					"height": 17,
 					"enterable": true,
 					"contextMenu": "none",
@@ -171,7 +172,7 @@
 					"type": "input",
 					"left": 0,
 					"top": 6,
-					"width": 794,
+					"width": 834,
 					"height": 17,
 					"enterable": false,
 					"contextMenu": "none",
@@ -361,15 +362,15 @@
 					"type": "button",
 					"text": "⟳",
 					"top": 29,
-					"left": 982,
+					"left": 262,
 					"width": 19,
 					"height": 19,
 					"events": [
 						"onClick"
 					],
-					"style": "flat",
+					"style": "toolbar",
 					"method": "ObjectMethods/oBtnLoadGoogle.4dm",
-					"sizingX": "move"
+					"sizingX": "fixed"
 				},
 				"oSearchTitleGoogle": {
 					"type": "input",
@@ -382,7 +383,7 @@
 					"fill": "automatic",
 					"placeholder": "Search in title",
 					"dataSource": "Form:C1466.searchTitleGoogle",
-					"sizingX": "fixed",
+					"sizingX": "grow",
 					"borderStyle": "none"
 				},
 				"Text": {
@@ -392,6 +393,54 @@
 					"left": 16,
 					"width": 211,
 					"height": 16
+				},
+				"Viereck6": {
+					"type": "rectangle",
+					"top": 189,
+					"left": 6,
+					"width": 243,
+					"height": 101,
+					"stroke": "transparent",
+					"fill": "#71D4FF",
+					"sizingX": "grow"
+				},
+				"oLastWaEvents": {
+					"type": "input",
+					"left": 13,
+					"top": 224,
+					"width": 225,
+					"height": 56,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "#CAF0FF",
+					"placeholder": "wa object events list",
+					"dataSource": "Form:C1466.lastWaEvents",
+					"sizingX": "grow",
+					"borderStyle": "none",
+					"fontSize": 10
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Last wa object events",
+					"top": 200,
+					"left": 16,
+					"width": 195,
+					"height": 16,
+					"sizingX": "fixed"
+				},
+				"oBtnClearEventLog": {
+					"type": "button",
+					"text": "🗑",
+					"top": 197,
+					"left": 221,
+					"width": 19,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnClearEventLog.4dm",
+					"sizingX": "move"
 				}
 			}
 		},
@@ -401,11 +450,11 @@
 					"type": "rectangle",
 					"top": 0,
 					"left": 0,
-					"width": 794,
+					"width": 834,
 					"height": 25,
 					"stroke": "transparent",
 					"fill": "#7200FF",
-					"right": 794,
+					"right": 834,
 					"sizingX": "grow"
 				},
 				"Viereck1": {
@@ -431,7 +480,7 @@
 					"type": "webArea",
 					"left": 260,
 					"top": 54,
-					"width": 741,
+					"width": 781,
 					"height": 644,
 					"method": "ObjectMethods/oWaGithub.4dm",
 					"webEngine": "embedded",
@@ -541,9 +590,9 @@
 				},
 				"oCurrPageUrlGithub": {
 					"type": "input",
-					"left": 260,
+					"left": 284,
 					"top": 30,
-					"width": 718,
+					"width": 757,
 					"height": 17,
 					"enterable": true,
 					"contextMenu": "none",
@@ -557,7 +606,7 @@
 					"type": "input",
 					"left": 0,
 					"top": 6,
-					"width": 794,
+					"width": 834,
 					"height": 17,
 					"enterable": false,
 					"contextMenu": "none",
@@ -740,15 +789,148 @@
 					"type": "button",
 					"text": "⟳",
 					"top": 29,
-					"left": 982,
+					"left": 262,
 					"width": 19,
 					"height": 19,
 					"events": [
 						"onClick"
 					],
-					"style": "flat",
+					"style": "toolbar",
 					"method": "ObjectMethods/oBtnLoadGithubUrl.4dm",
-					"sizingX": "move"
+					"sizingX": "fixed"
+				},
+				"Viereck7": {
+					"type": "rectangle",
+					"top": 130,
+					"left": 6,
+					"width": 243,
+					"height": 111,
+					"stroke": "transparent",
+					"fill": "#E1F7FF"
+				},
+				"oCb4dGithubTag4dproject": {
+					"type": "checkbox",
+					"text": "#4d-project",
+					"top": 137,
+					"left": 11,
+					"width": 75,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dproject.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dproject"
+				},
+				"oCb4dGithubTag4ddatabase": {
+					"type": "checkbox",
+					"text": "#4d-database",
+					"top": 137,
+					"left": 112,
+					"width": 84,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4ddatabase.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4ddatabase"
+				},
+				"oCb4dGithubTag4dplugin": {
+					"type": "checkbox",
+					"text": "#4d-plugin",
+					"top": 157,
+					"left": 11,
+					"width": 75,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dplugin.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dplugin"
+				},
+				"oCb4dGithubTag4dcomponent": {
+					"type": "checkbox",
+					"text": "#4d-component",
+					"top": 157,
+					"left": 112,
+					"width": 97,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dcomponent.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dcomponent"
+				},
+				"oCb4dGithubTag4dv18": {
+					"type": "checkbox",
+					"text": "#4dv18",
+					"top": 177,
+					"left": 11,
+					"width": 75,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dv18.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dv18"
+				},
+				"oCb4dGithubTag4dhdi": {
+					"type": "checkbox",
+					"text": "#4d-hdi",
+					"top": 177,
+					"left": 112,
+					"width": 58,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dhdi.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dhdi"
+				},
+				"oCb4dGithubTag4dbinary": {
+					"type": "checkbox",
+					"text": "#4d-binary",
+					"top": 197,
+					"left": 11,
+					"width": 75,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dbinary.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dbinary"
+				},
+				"oCb4dGithubTag4dexapp": {
+					"type": "checkbox",
+					"text": "#4d-example-application",
+					"top": 197,
+					"left": 112,
+					"width": 132,
+					"height": 11,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCb4dGithubTag4dexapp.4dm",
+					"dataSource": "Form:C1466.cbGithubTag4dexapp"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Max 6 checked at once!\rGithub limit max 5 AND/OR operators",
+					"top": 215,
+					"left": 8,
+					"width": 239,
+					"height": 23,
+					"fontSize": 8,
+					"stroke": "#808080",
+					"textAlign": "center",
+					"sizingX": "fixed"
 				}
 			}
 		},
@@ -758,7 +940,7 @@
 					"type": "listbox",
 					"left": 7,
 					"top": 31,
-					"width": 994,
+					"width": 1034,
 					"height": 306,
 					"events": [
 						"onClick",
@@ -920,7 +1102,7 @@
 					"type": "input",
 					"left": 6,
 					"top": 7,
-					"width": 297,
+					"width": 317,
 					"height": 17,
 					"enterable": true,
 					"contextMenu": "none",
@@ -934,7 +1116,7 @@
 					"type": "button",
 					"text": "🔎",
 					"top": 6,
-					"left": 308,
+					"left": 328,
 					"width": 19,
 					"height": 19,
 					"events": [
@@ -947,14 +1129,14 @@
 					"type": "splitter",
 					"left": 0,
 					"top": 342,
-					"width": 1001,
+					"width": 1041,
 					"height": 3
 				},
 				"oWaKb4dCom": {
 					"type": "webArea",
 					"left": 6,
 					"top": 350,
-					"width": 994,
+					"width": 1034,
 					"height": 349,
 					"method": "ObjectMethods/oWaKb4dCom.4dm",
 					"webEngine": "embedded",
@@ -983,7 +1165,7 @@
 					"type": "listbox",
 					"left": 7,
 					"top": 52,
-					"width": 994,
+					"width": 1034,
 					"height": 648,
 					"events": [
 						"onClick",
@@ -1037,7 +1219,7 @@
 			}
 		}
 	],
-	"geometryStamp": 3102,
+	"geometryStamp": 3787,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
@@ -1045,5 +1227,6 @@
 			"View 1": {}
 		}
 	},
-	"method": "method.4dm"
+	"method": "method.4dm",
+	"menuBar": "Menubar #1"
 }
