@@ -98,6 +98,19 @@
 		},
 		{
 			"objects": {
+				"oProgressWaGoogle": {
+					"type": "progress",
+					"left": 283,
+					"top": 38,
+					"width": 757,
+					"height": 18,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.progressWaGoogle",
+					"continuousExecution": false,
+					"max": 100,
+					"min": 0,
+					"showGraduations": false
+				},
 				"Viereck5": {
 					"type": "rectangle",
 					"top": 114,
@@ -132,16 +145,16 @@
 				"oWaGoogle": {
 					"type": "webArea",
 					"left": 260,
-					"top": 54,
+					"top": 49,
 					"width": 781,
-					"height": 644,
+					"height": 649,
 					"method": "ObjectMethods/oWaGoogle.4dm",
 					"webEngine": "embedded",
 					"dataSource": "gWaGoogle",
 					"methodsAccessibility": "all",
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"borderStyle": "double",
+					"borderStyle": "none",
 					"events": [
 						"onLoad",
 						"onUnload",
@@ -152,7 +165,8 @@
 						"onURLFiltering",
 						"onOpenExternalLink",
 						"onWindowOpeningDenied"
-					]
+					],
+					"progressSource": "Form.progressWaGoogle"
 				},
 				"oCurrPageUrlGoogle": {
 					"type": "input",
@@ -242,9 +256,9 @@
 				"Splitter": {
 					"type": "splitter",
 					"left": 251,
-					"top": 53,
+					"top": 48,
 					"width": 3,
-					"height": 646,
+					"height": 651,
 					"sizingY": "grow"
 				},
 				"oCb4dCom": {
@@ -446,6 +460,19 @@
 		},
 		{
 			"objects": {
+				"oProgressWaGithub": {
+					"type": "progress",
+					"left": 283,
+					"top": 38,
+					"width": 757,
+					"height": 18,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.progressWaGithub",
+					"continuousExecution": false,
+					"max": 100,
+					"min": 0,
+					"showGraduations": false
+				},
 				"Viereck3": {
 					"type": "rectangle",
 					"top": 0,
@@ -479,16 +506,16 @@
 				"oWaGithub": {
 					"type": "webArea",
 					"left": 260,
-					"top": 54,
+					"top": 49,
 					"width": 781,
-					"height": 644,
+					"height": 649,
 					"method": "ObjectMethods/oWaGithub.4dm",
 					"webEngine": "embedded",
 					"dataSource": "gWaGithub",
 					"methodsAccessibility": "all",
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"borderStyle": "double",
+					"borderStyle": "none",
 					"events": [
 						"onLoad",
 						"onUnload",
@@ -499,14 +526,15 @@
 						"onURLFiltering",
 						"onOpenExternalLink",
 						"onWindowOpeningDenied"
-					]
+					],
+					"progressSource": "Form.progressWaGithub"
 				},
 				"Splitter1": {
 					"type": "splitter",
 					"left": 251,
-					"top": 53,
+					"top": 48,
 					"width": 3,
-					"height": 646,
+					"height": 651,
 					"sizingY": "grow"
 				},
 				"oColPageContGithub": {
@@ -957,7 +985,7 @@
 					"currentItemPositionSource": "Form:C1466.kb4dComCurrPos",
 					"selectedItemsSource": "Form:C1466.kb4dComCurrSel",
 					"method": "ObjectMethods/oColKb4dCom.4dm",
-					"selectionMode": "single",
+					"selectionMode": "multiple",
 					"columns": [
 						{
 							"header": {
@@ -1130,7 +1158,8 @@
 					"left": 0,
 					"top": 342,
 					"width": 1041,
-					"height": 3
+					"height": 3,
+					"sizingX": "grow"
 				},
 				"oWaKb4dCom": {
 					"type": "webArea",
@@ -1156,6 +1185,26 @@
 						"onOpenExternalLink",
 						"onWindowOpeningDenied"
 					]
+				},
+				"oCountKbLength": {
+					"type": "input",
+					"left": 357,
+					"top": 8,
+					"width": 148,
+					"height": 16,
+					"enterable": false,
+					"contextMenu": "none",
+					"fill": "transparent",
+					"placeholder": "current page title",
+					"dataSource": "String:C10(Form:C1466.kb4dComCurrSel.length)+\" / \"+String:C10(Form:C1466.colKb4dCom.length)",
+					"borderStyle": "none",
+					"textAlign": "left",
+					"sizingX": "fixed",
+					"fontSize": 12,
+					"fontWeight": "normal",
+					"stroke": "#808080",
+					"focusable": false,
+					"dataSourceTypeHint": "text"
 				}
 			}
 		},
@@ -1219,7 +1268,7 @@
 			}
 		}
 	],
-	"geometryStamp": 3787,
+	"geometryStamp": 4054,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

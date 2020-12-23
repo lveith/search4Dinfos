@@ -2,10 +2,6 @@
 
 Case of 
 	: (Form event code:C388=On End URL Loading:K2:47)
-		If (Shift down:C543)
-			TRACE:C157
-		End if 
-		
 		Case of 
 			: (Form event code:C388=On Begin URL Loading:K2:45)
 				

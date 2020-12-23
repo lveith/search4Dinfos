@@ -21,11 +21,13 @@ Case of
 		Form:C1466.colPageContGoogle:=New collection:C1472
 		Form:C1466.searchValueGoogle:="C_TEXT"
 		Form:C1466.searchTitleGoogle:=""
+		Form:C1466.progressWaGoogle:=0
 		
 		Form:C1466.currUrlGithub:=""
 		Form:C1466.currPageTitleGithub:=""
 		Form:C1466.colPageContGithub:=New collection:C1472
 		Form:C1466.searchValueGithub:="C_TEXT"
+		Form:C1466.progressWaGithub:=0
 		
 		Form:C1466.rbtGithubTypCode:="Code"
 		Form:C1466.rbtGithubTypRepositories:="Repositories"
