@@ -96,23 +96,23 @@ If (Form:C1466.cbGithubTag4dproject=1)
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4ddatabase=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dproject+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4ddatabase
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dplugin=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dplugin+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4dplugin
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dcomponent=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dcomponent+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4dcomponent
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dv18=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dv18+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4dv18
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dhdi=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dhdi+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4dhdi
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dbinary=1)
@@ -120,8 +120,24 @@ If (Form:C1466.cbGithubTag4dbinary=1)
 	$opOR:=" OR "
 End if 
 If (Form:C1466.cbGithubTag4dexapp=1)
-	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dexapp+"%22"
+	$githubSearchUrl:=$githubSearchUrl+$opOR+Form:C1466.cbtGithubTag4dexapp
 	$opOR:=" OR "
+End if 
+If (Split string:C1554($githubSearchUrl; " OR ").length<5)
+	$githubSearchUrl:=$githubSearchUrl+" NOT cinema NOT matrix4"
+	If (Split string:C1554($githubSearchUrl; " OR ").length<3)
+		If (Form:C1466.cbGithubTag4dproject=1)
+			$githubSearchUrl:=$githubSearchUrl+" NOT arduino NOT Tracking4D"
+		End if 
+		If (Split string:C1554($githubSearchUrl; " NOT ").length<5)
+			If (Form:C1466.cbGithubTag4dcomponent=1)
+				$githubSearchUrl:=$githubSearchUrl+" NOT aframe"
+			End if 
+			If (Form:C1466.cbGithubTag4dbinary=1)
+				$githubSearchUrl:=$githubSearchUrl+" NOT 4DTreeBoxesInAPlane"
+			End if 
+		End if 
+	End if 
 End if 
 
 // $opOR reset?

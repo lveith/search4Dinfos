@@ -19,14 +19,14 @@ Case of
 		Form:C1466.currUrlGoogle:=""
 		Form:C1466.currPageTitleGoogle:=""
 		Form:C1466.colPageContGoogle:=New collection:C1472
-		Form:C1466.searchValueGoogle:="C_TEXT"
+		Form:C1466.searchValueGoogle:=""
 		Form:C1466.searchTitleGoogle:=""
 		Form:C1466.progressWaGoogle:=0
 		
 		Form:C1466.currUrlGithub:=""
 		Form:C1466.currPageTitleGithub:=""
 		Form:C1466.colPageContGithub:=New collection:C1472
-		Form:C1466.searchValueGithub:="C_TEXT"
+		Form:C1466.searchValueGithub:=""
 		Form:C1466.progressWaGithub:=0
 		
 		Form:C1466.rbtGithubTypCode:="Code"
@@ -78,7 +78,7 @@ Case of
 		Form:C1466.kb4dComCurrPos:=0
 		Form:C1466.kb4dComCurrSel:=New collection:C1472
 		Form:C1466.colKb4dCom:=New collection:C1472
-		Form:C1466.searchValueKb4dCom:="C_TEXT"
+		Form:C1466.searchValueKb4dCom:=""
 		
 		// WA SET URL FILTERS
 		// WA SET EXTERNAL LINKS FILTERS
