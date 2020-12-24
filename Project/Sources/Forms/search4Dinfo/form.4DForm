@@ -98,6 +98,16 @@
 		},
 		{
 			"objects": {
+				"Viereck8": {
+					"type": "rectangle",
+					"top": 189,
+					"left": 6,
+					"width": 243,
+					"height": 80,
+					"stroke": "transparent",
+					"fill": "#FFC365",
+					"sizingX": "grow"
+				},
 				"oProgressWaGoogle": {
 					"type": "progress",
 					"left": 283,
@@ -202,9 +212,9 @@
 				"oColPageContGoogle": {
 					"type": "listbox",
 					"left": 6,
-					"top": 294,
+					"top": 374,
 					"width": 239,
-					"height": 404,
+					"height": 324,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -410,7 +420,7 @@
 				},
 				"Viereck6": {
 					"type": "rectangle",
-					"top": 189,
+					"top": 269,
 					"left": 6,
 					"width": 243,
 					"height": 101,
@@ -421,7 +431,7 @@
 				"oLastWaEvents": {
 					"type": "input",
 					"left": 13,
-					"top": 224,
+					"top": 304,
 					"width": 225,
 					"height": 56,
 					"enterable": true,
@@ -436,7 +446,7 @@
 				"Text1": {
 					"type": "text",
 					"text": "Last wa object events",
-					"top": 200,
+					"top": 280,
 					"left": 16,
 					"width": 195,
 					"height": 16,
@@ -445,7 +455,7 @@
 				"oBtnClearEventLog": {
 					"type": "button",
 					"text": "🗑",
-					"top": 197,
+					"top": 277,
 					"left": 221,
 					"width": 19,
 					"height": 19,
@@ -455,6 +465,36 @@
 					"style": "toolbar",
 					"method": "ObjectMethods/oBtnClearEventLog.4dm",
 					"sizingX": "move"
+				},
+				"oBtnTopbarON": {
+					"type": "button",
+					"text": "Topbar ON",
+					"top": 197,
+					"left": 15,
+					"width": 93,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnTopbarON.4dm",
+					"sizingX": "move",
+					"fontSize": 10
+				},
+				"oBtnTopbarOFF": {
+					"type": "button",
+					"text": "Topbar OFF",
+					"top": 197,
+					"left": 133,
+					"width": 93,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnTopbarOFF.4dm",
+					"sizingX": "move",
+					"fontSize": 10
 				}
 			}
 		},
@@ -1268,7 +1308,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4054,
+	"geometryStamp": 4270,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

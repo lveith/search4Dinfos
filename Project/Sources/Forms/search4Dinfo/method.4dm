@@ -119,6 +119,7 @@ Case of
 		OBJECT SET TITLE:C194(*; "oBtnChooseFormPage"; "Google")  // form page 1
 		
 		Form:C1466.lastWaEvents:=""
+		Form:C1466.toggleTopBar:=False:C215
 		
 	: (Form event code:C388=On Unload:K2:2)
 		WA OPEN URL:C1020(*; "oWaGoogle"; "about:blank")  // prevent from adopting previous wa-session as start-default
