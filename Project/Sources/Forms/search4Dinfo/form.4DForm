@@ -152,32 +152,6 @@
 					"fill": "#adff2f",
 					"right": 249
 				},
-				"oWaGoogle": {
-					"type": "webArea",
-					"left": 260,
-					"top": 49,
-					"width": 781,
-					"height": 649,
-					"method": "ObjectMethods/oWaGoogle.4dm",
-					"webEngine": "embedded",
-					"dataSource": "gWaGoogle",
-					"methodsAccessibility": "all",
-					"sizingX": "grow",
-					"sizingY": "grow",
-					"borderStyle": "none",
-					"events": [
-						"onLoad",
-						"onUnload",
-						"onBeginURLLoading",
-						"onURLResourceLoading",
-						"onEndURLLoading",
-						"onURLLoadingError",
-						"onURLFiltering",
-						"onOpenExternalLink",
-						"onWindowOpeningDenied"
-					],
-					"progressSource": "Form.progressWaGoogle"
-				},
 				"oCurrPageUrlGoogle": {
 					"type": "input",
 					"left": 284,
@@ -495,6 +469,32 @@
 					"method": "ObjectMethods/oBtnTopbarOFF.4dm",
 					"sizingX": "move",
 					"fontSize": 10
+				},
+				"oWaGoogle": {
+					"type": "webArea",
+					"left": 260,
+					"top": 49,
+					"width": 781,
+					"height": 649,
+					"method": "ObjectMethods/oWaGoogle.4dm",
+					"webEngine": "embedded",
+					"dataSource": "gWaGoogle",
+					"methodsAccessibility": "all",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"borderStyle": "none",
+					"events": [
+						"onLoad",
+						"onUnload",
+						"onBeginURLLoading",
+						"onURLResourceLoading",
+						"onEndURLLoading",
+						"onURLLoadingError",
+						"onURLFiltering",
+						"onOpenExternalLink",
+						"onWindowOpeningDenied"
+					],
+					"progressSource": "Form.progressWaGoogle"
 				}
 			}
 		},
@@ -1549,7 +1549,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4839,
+	"geometryStamp": 4859,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

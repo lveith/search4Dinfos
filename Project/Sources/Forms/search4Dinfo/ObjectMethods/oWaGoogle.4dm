@@ -12,11 +12,11 @@ Form:C1466.lastWaEvents:="#"+String:C10(FORM Event:C1606.code)+" ("+FORM Event:C
 
 Case of 
 	: (Form event code:C388=On Begin URL Loading:K2:45)
+		OBJECT SET VISIBLE:C603(*; "oWaGoogle"; False:C215)
 		
 	: (Form event code:C388=On End URL Loading:K2:47)
-		If (Shift down:C543)
-			TRACE:C157
-		End if 
+		OBJECT SET VISIBLE:C603(*; "oWaGoogle"; True:C214)
+		
 		Form:C1466.currUrlGoogle:=WA Get current URL:C1025(*; "oWaGoogle")
 		Form:C1466.currPageTitle:=WA Get page title:C1036(*; "oWaGoogle")
 		
@@ -24,7 +24,15 @@ Case of
 		
 		Case of 
 			: (Form:C1466.currUrlGoogle="https://www.google.com/search?q=@")
-				$js:="document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='14px';"
+				$js:=""
+				$js:=$js+"document.documentElement.style.overflowX='scroll';"
+				$js:=$js+"document.body.style.width='752px';"
+				$js:=$js+"document.body.style.overflowX='hidden';"
+				$js:=$js+"document.getElementById('hdtb-msb').style.minWidth='752px';"
+				$js:=$js+"document.getElementById('top_nav').style.minWidth='752px';"
+				$js:=$js+"document.getElementById('top_nav').style.maxWidth='752px';"
+				$js:=$js+"document.getElementById('top_nav').style.overflowX='hidden';"
+				$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='14px';"
 				$js:=$js+"document.getElementById('center_col').style.marginLeft='14px';"
 				$js:=$js+"document.getElementById('hdtb-msb-vis').style.marginLeft='14px';"
 				$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='0';"
@@ -37,9 +45,10 @@ Case of
 				$js:=$js+"document.getElementById('cnt').style.paddingTop='0';"
 				$js:=$js+"document.querySelectorAll('#footcnt #fbar > div.fbar > div')[0].style.marginLeft='8px';"
 				$js:=$js+"document.querySelectorAll('#footcnt #fbar > div.fbar > span')[0].style.marginLeft='8px';"
-				$js:=$js+"document.querySelectorAll('.CvDJxb')[0].style.minWidth='800px';"
-				$js:=$js+"document.getElementById('appbar').style.minWidth='800px';"
-				$js:=$js+"document.getElementById('rhs').style.display='none'"
+				$js:=$js+"document.querySelectorAll('.CvDJxb')[0].style.minWidth='752px';"
+				$js:=$js+"document.getElementById('appbar').style.minWidth='752px';"
+				$js:=$js+"document.getElementById('rhs').style.display='none';"
+				$js:=$js+"setTimeout(function(){ document.querySelectorAll('.CvDJxb #gb > div > div.gb_3e')[0].style.display='none'; }, 555);"
 				
 				$resultTxt:=WA Evaluate JavaScript:C1029(*; "oWaGoogle"; $js; Is text:K8:3)
 				
