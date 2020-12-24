@@ -1,6 +1,6 @@
 
 Case of 
 	: (Form event code:C388=On Clicked:K2:4)
-		WA OPEN URL:C1020(*;"oWaGithub";Form:C1466.currUrlGithub)
+		WA OPEN URL:C1020(*; "oWaGithub"; getGithubSearchUrl)
 		
 End case 

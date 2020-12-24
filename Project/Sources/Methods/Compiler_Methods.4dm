@@ -20,5 +20,11 @@ C_TEXT:C284(yGet4DVersionShortname; $0)
 C_LONGINT:C283(kb4dDocWorker; $1)
 C_TEXT:C284(kb4dDocWorker; $2)
 
+//isGithubTagActive
+C_BOOLEAN:C305(isGithubTagActive; $0)
+
 //getGoogleSearchUrl
 C_TEXT:C284(getGoogleSearchUrl; $0)
+
+//isGithubLangActive
+C_BOOLEAN:C305(isGithubLangActive; $0)

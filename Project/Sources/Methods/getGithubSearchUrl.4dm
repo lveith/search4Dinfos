@@ -3,7 +3,7 @@
 
 C_TEXT:C284($githubSearchUrl; $0)
 C_TEXT:C284($opOR)
-C_BOOLEAN:C305($useTag; $useExt)
+C_BOOLEAN:C305($useTag; $useExt; $usedSearchVal)
 
 Case of 
 	: (Form:C1466.cbGithubTag4dproject=1)
@@ -34,15 +34,18 @@ $githubSearchUrl:="https://github.com/search?q="
 
 $opOR:=""
 
+// --- SearchWords ---
 If ($useTag)
 	// ??
 Else 
 	If (Form:C1466.searchValueGithub#"")
-		$githubSearchUrl:=$githubSearchUrl+Replace string:C233(Form:C1466.searchValueGithub; " "; "%20")
+		$githubSearchUrl:=$githubSearchUrl+"%22"+Replace string:C233(Replace string:C233(Form:C1466.searchValueGithub; " "; "%20"); "\""; "\\\"")+"%22"
+		$usedSearchVal:=True:C214
 		$opOR:="+"
 	End if 
 End if 
 
+// --- Extensions ---
 Case of 
 	: ($useTag)
 		Form:C1466.rbGithubExt4dm:=0
@@ -52,6 +55,10 @@ Case of
 		Form:C1466.rbGithubExt4DB:=0
 		Form:C1466.rbGithubExt4dbase:=0
 		Form:C1466.rbGithubExt4DSettings:=0
+		Form:C1466.rbGithubExtOff:=1
+		$useExt:=False:C215
+		
+	: (Form:C1466.rbGithubExtOff=1)
 		$useExt:=False:C215
 		
 	: (Form:C1466.rbGithubExt4dm=1)
@@ -91,6 +98,7 @@ Case of
 		
 End case 
 
+// --- Tags ---
 If (Form:C1466.cbGithubTag4dproject=1)
 	$githubSearchUrl:=$githubSearchUrl+$opOR+"%22"+Form:C1466.cbtGithubTag4dproject+"%22"
 	$opOR:=" OR "
@@ -142,6 +150,7 @@ End if
 
 // $opOR reset?
 
+// --- Type ---
 $githubSearchUrl:=$githubSearchUrl+"&type="
 Case of 
 	: (Form:C1466.rbGithubTypCode=1)
@@ -149,7 +158,17 @@ Case of
 			: ($useTag)
 				Form:C1466.rbGithubTypCode:=0
 				Form:C1466.rbGithubTypRepositories:=1
+				Form:C1466.rbGithubTypUsers:=0
+				Form:C1466.rbGithubTypIssues:=0
 				$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypRepositories
+				
+			: (isGithubLangActive)
+				Form:C1466.rbGithubTypCode:=0
+				Form:C1466.rbGithubTypRepositories:=0
+				Form:C1466.rbGithubTypUsers:=1
+				Form:C1466.rbGithubTypIssues:=0
+				$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypUsers
+				
 			Else 
 				$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypCode
 		End case 
@@ -157,17 +176,73 @@ Case of
 	: ($useExt)
 		Form:C1466.rbGithubTypCode:=0
 		Form:C1466.rbGithubTypRepositories:=1
+		Form:C1466.rbGithubTypUsers:=0
+		Form:C1466.rbGithubTypIssues:=0
 		$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypRepositories
 		
 	: (Form:C1466.rbGithubTypUsers=1)
-		$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypUsers
+		Case of 
+			: ($useTag)
+				Form:C1466.rbGithubTypCode:=0
+				Form:C1466.rbGithubTypRepositories:=1
+				Form:C1466.rbGithubTypUsers:=0
+				Form:C1466.rbGithubTypIssues:=0
+				$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypRepositories
+			Else 
+				$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypUsers
+		End case 
 		
 	: (Form:C1466.rbGithubTypIssues=1)
 		$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypIssues
+		
+	: (Form:C1466.rbGithubTypRepositories=1)
+		If (($usedSearchVal) | ($useTag))
+			$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypRepositories
+		Else 
+			Form:C1466.rbGithubTypRepositories:=0
+			Form:C1466.rbGithubTypUsers:=1
+			$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypUsers
+		End if 
 		
 	Else 
 		$githubSearchUrl:=$githubSearchUrl+Form:C1466.rbtGithubTypRepositories
 		
 End case 
 
+// --- Languages ---
+Case of 
+	: (Form:C1466.rbGithubLang4d=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLang4d
+		
+	: (Form:C1466.rbGithubLangJs=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangJs
+		
+	: (Form:C1466.rbGithubLangVb=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangVb
+		
+	: (Form:C1466.rbGithubShell=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubShell
+		
+	: (Form:C1466.rbGithubLangHtml=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangHtml
+		
+	: (Form:C1466.rbGithubLangVue=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangVue
+		
+	: (Form:C1466.rbGithubLangCss=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangCss
+		
+	: (Form:C1466.rbGithubLangPhp=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangPhp
+		
+	: (Form:C1466.rbGithubLangPerl=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangPerl
+		
+	: (Form:C1466.rbGithubLangXslt=1)
+		$githubSearchUrl:=$githubSearchUrl+"&ref=advsearch&l="+Form:C1466.rbtGithubLangXslt
+		
+End case 
+
 $0:=$githubSearchUrl
+
+// - EOF -

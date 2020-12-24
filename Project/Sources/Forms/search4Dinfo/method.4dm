@@ -39,13 +39,14 @@ Case of
 		Form:C1466.rbGithubTypUsers:=0
 		Form:C1466.rbGithubTypIssues:=0
 		
-		Form:C1466.rbGithubExt4dm:=1
+		Form:C1466.rbGithubExt4dm:=0
 		Form:C1466.rbGithubExt4DProject:=0
 		Form:C1466.rbGithubExt4DForm:=0
 		Form:C1466.rbGithubExt4DCatalog:=0
 		Form:C1466.rbGithubExt4DB:=0
 		Form:C1466.rbGithubExt4dbase:=0
 		Form:C1466.rbGithubExt4DSettings:=0
+		Form:C1466.rbGithubExtOff:=1
 		
 		Form:C1466.rbtGithubExt4dm:="4dm"
 		Form:C1466.rbtGithubExt4DProject:="4DProject"
@@ -54,6 +55,29 @@ Case of
 		Form:C1466.rbtGithubExt4DB:="4DB"
 		Form:C1466.rbtGithubExt4dbase:="4dbase"
 		Form:C1466.rbtGithubExt4DSettings:="4DSettings"
+		
+		Form:C1466.rbGithubLang4d:=0
+		Form:C1466.rbGithubLangJs:=0
+		Form:C1466.rbGithubLangVb:=0
+		Form:C1466.rbGithubShell:=0
+		Form:C1466.rbGithubLangHtml:=0
+		Form:C1466.rbGithubLangVue:=0
+		Form:C1466.rbGithubLangCss:=0
+		Form:C1466.rbGithubLangPhp:=0
+		Form:C1466.rbGithubLangPerl:=0
+		Form:C1466.rbGithubLangXslt:=0
+		Form:C1466.rbGithubLangOff:=1
+		
+		Form:C1466.rbtGithubLang4d:="4D"
+		Form:C1466.rbtGithubLangJs:="JavaScript"
+		Form:C1466.rbtGithubLangVb:="Visual+Basic+.NET"
+		Form:C1466.rbtGithubShell:="Shell"
+		Form:C1466.rbtGithubLangHtml:="HTML"
+		Form:C1466.rbtGithubLangVue:="Vue"
+		Form:C1466.rbtGithubLangCss:="CSS"
+		Form:C1466.rbtGithubLangPhp:="PHP"
+		Form:C1466.rbtGithubLangPerl:="Perl"
+		Form:C1466.rbtGithubLangXslt:="XSLT"
 		
 		Form:C1466.cbGithubTag4dproject:=0
 		Form:C1466.cbGithubTag4ddatabase:=0
@@ -120,6 +144,7 @@ Case of
 		
 		Form:C1466.lastWaEvents:=""
 		Form:C1466.toggleTopBar:=False:C215
+		Form:C1466.toggleLeftBar:=False:C215
 		
 	: (Form event code:C388=On Unload:K2:2)
 		WA OPEN URL:C1020(*; "oWaGoogle"; "about:blank")  // prevent from adopting previous wa-session as start-default

@@ -1,4 +1,4 @@
-C_TEXT:C284($js)
+C_TEXT:C284($js; $resultTxt)
 C_POINTER:C301($ptr)
 
 Case of 

@@ -580,9 +580,9 @@
 				"oColPageContGithub": {
 					"type": "listbox",
 					"left": 6,
-					"top": 294,
+					"top": 336,
 					"width": 239,
-					"height": 404,
+					"height": 362,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -752,7 +752,7 @@
 					"type": "radio",
 					"text": ".4dm",
 					"top": 95,
-					"left": 11,
+					"left": 54,
 					"width": 37,
 					"height": 11,
 					"events": [
@@ -763,11 +763,11 @@
 					"stroke": "#191970",
 					"method": "ObjectMethods/oRbGithubExt4dm.4dm"
 				},
-				"oRbGithubTypExt4DProject": {
+				"oRbGithubExt4DProject": {
 					"type": "radio",
 					"text": ".4DProject",
 					"top": 95,
-					"left": 54,
+					"left": 111,
 					"width": 62,
 					"height": 11,
 					"events": [
@@ -776,13 +776,13 @@
 					"dataSource": "Form:C1466.rbGithubExt4DProject",
 					"radioGroup": "githubRbExtGroup",
 					"stroke": "#191970",
-					"method": "ObjectMethods/oRbGithubTypExt4DProject.4dm"
+					"method": "ObjectMethods/oRbGithubExt4DProject.4dm"
 				},
 				"oRbGithubExt4DForm": {
 					"type": "radio",
 					"text": ".4DForm",
 					"top": 95,
-					"left": 122,
+					"left": 181,
 					"width": 53,
 					"height": 11,
 					"events": [
@@ -796,7 +796,7 @@
 				"oRbGithubExt4DCatalog": {
 					"type": "radio",
 					"text": ".4DCatalog",
-					"top": 95,
+					"top": 115,
 					"left": 181,
 					"width": 64,
 					"height": 11,
@@ -869,7 +869,7 @@
 				},
 				"Viereck7": {
 					"type": "rectangle",
-					"top": 130,
+					"top": 186,
 					"left": 6,
 					"width": 243,
 					"height": 111,
@@ -879,7 +879,7 @@
 				"oCb4dGithubTag4dproject": {
 					"type": "checkbox",
 					"text": "#4d-project",
-					"top": 137,
+					"top": 193,
 					"left": 11,
 					"width": 75,
 					"height": 11,
@@ -893,7 +893,7 @@
 				"oCb4dGithubTag4ddatabase": {
 					"type": "checkbox",
 					"text": "#4d-database",
-					"top": 137,
+					"top": 193,
 					"left": 112,
 					"width": 84,
 					"height": 11,
@@ -907,7 +907,7 @@
 				"oCb4dGithubTag4dplugin": {
 					"type": "checkbox",
 					"text": "#4d-plugin",
-					"top": 157,
+					"top": 213,
 					"left": 11,
 					"width": 75,
 					"height": 11,
@@ -921,7 +921,7 @@
 				"oCb4dGithubTag4dcomponent": {
 					"type": "checkbox",
 					"text": "#4d-component",
-					"top": 157,
+					"top": 213,
 					"left": 112,
 					"width": 97,
 					"height": 11,
@@ -935,7 +935,7 @@
 				"oCb4dGithubTag4dv18": {
 					"type": "checkbox",
 					"text": "#4dv18",
-					"top": 177,
+					"top": 233,
 					"left": 11,
 					"width": 75,
 					"height": 11,
@@ -949,7 +949,7 @@
 				"oCb4dGithubTag4dhdi": {
 					"type": "checkbox",
 					"text": "#4d-hdi",
-					"top": 177,
+					"top": 233,
 					"left": 112,
 					"width": 58,
 					"height": 11,
@@ -963,7 +963,7 @@
 				"oCb4dGithubTag4dbinary": {
 					"type": "checkbox",
 					"text": "#4d-binary",
-					"top": 197,
+					"top": 253,
 					"left": 11,
 					"width": 75,
 					"height": 11,
@@ -977,7 +977,7 @@
 				"oCb4dGithubTag4dexapp": {
 					"type": "checkbox",
 					"text": "#4d-example-application",
-					"top": 197,
+					"top": 253,
 					"left": 112,
 					"width": 132,
 					"height": 11,
@@ -991,14 +991,255 @@
 				"Text2": {
 					"type": "text",
 					"text": "Max 6 checked at once!\rGithub limit max 5 AND/OR operators",
-					"top": 215,
+					"top": 271,
 					"left": 8,
-					"width": 239,
+					"width": 238,
 					"height": 23,
 					"fontSize": 8,
 					"stroke": "#808080",
 					"textAlign": "center",
 					"sizingX": "fixed"
+				},
+				"Viereck9": {
+					"type": "rectangle",
+					"top": 297,
+					"left": 6,
+					"width": 243,
+					"height": 37,
+					"stroke": "transparent",
+					"fill": "#FFC365",
+					"sizingX": "grow"
+				},
+				"oBtnLeftbarON": {
+					"type": "button",
+					"text": "Leftbar ON",
+					"top": 305,
+					"left": 15,
+					"width": 93,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnLeftbarON.4dm",
+					"sizingX": "move",
+					"fontSize": 10
+				},
+				"oBtnLeftbarOFF": {
+					"type": "button",
+					"text": "Leftbar OFF",
+					"top": 305,
+					"left": 133,
+					"width": 93,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnLeftbarOFF.4dm",
+					"sizingX": "move",
+					"fontSize": 10
+				},
+				"Viereck10": {
+					"type": "rectangle",
+					"top": 130,
+					"left": 6,
+					"width": 243,
+					"height": 56,
+					"stroke": "transparent",
+					"fill": "#A0DDBE"
+				},
+				"oRbGithubLang4d": {
+					"type": "radio",
+					"text": "4D",
+					"top": 149,
+					"left": 11,
+					"width": 29,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLang4d",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLang4d.4dm"
+				},
+				"oRbGithubTypLangJs": {
+					"type": "radio",
+					"text": "JavaScript",
+					"top": 149,
+					"left": 84,
+					"width": 63,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangJs",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubTypLangJs.4dm"
+				},
+				"oRbGithubLangVb": {
+					"type": "radio",
+					"text": "Visual Basic .NET",
+					"top": 149,
+					"left": 151,
+					"width": 93,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangVb",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangVb.4dm"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Languages",
+					"top": 132,
+					"left": 8,
+					"width": 238,
+					"height": 11,
+					"fontSize": 8,
+					"stroke": "#808080",
+					"textAlign": "center",
+					"sizingX": "fixed"
+				},
+				"oRbGithubLangShell": {
+					"type": "radio",
+					"text": "Shell",
+					"top": 166,
+					"left": 85,
+					"width": 39,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubShell",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangShell.4dm"
+				},
+				"oRbGithubTypLangHtml": {
+					"type": "radio",
+					"text": "HTML",
+					"top": 166,
+					"left": 127,
+					"width": 44,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangHtml",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubTypLangHtml.4dm"
+				},
+				"oRbGithubLangVue": {
+					"type": "radio",
+					"text": "Vue",
+					"top": 166,
+					"left": 210,
+					"width": 33,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangVue",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangVue.4dm"
+				},
+				"oRbGithubLangCss": {
+					"type": "radio",
+					"text": "CSS",
+					"top": 166,
+					"left": 11,
+					"width": 35,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangCss",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangCss.4dm"
+				},
+				"oRbGithubTypLangPhp": {
+					"type": "radio",
+					"text": "PHP",
+					"top": 166,
+					"left": 48,
+					"width": 35,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangPhp",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubTypLangPhp.4dm"
+				},
+				"oRbGithubLangPerl": {
+					"type": "radio",
+					"text": "Perl",
+					"top": 166,
+					"left": 174,
+					"width": 33,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangPerl",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangPerl.4dm"
+				},
+				"oRbGithubLangXslt": {
+					"type": "radio",
+					"text": "XSLT",
+					"top": 149,
+					"left": 44,
+					"width": 36,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangXslt",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#191970",
+					"method": "ObjectMethods/oRbGithubLangXslt.4dm"
+				},
+				"oRbGithubExtOff": {
+					"type": "radio",
+					"text": "OFF",
+					"top": 95,
+					"left": 11,
+					"width": 37,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubExtOff",
+					"radioGroup": "githubRbExtGroup",
+					"stroke": "#800000",
+					"method": "ObjectMethods/oRbGithubExtOff.4dm"
+				},
+				"oRbGithubLangOff": {
+					"type": "radio",
+					"text": "OFF",
+					"top": 133,
+					"left": 11,
+					"width": 37,
+					"height": 11,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.rbGithubLangOff",
+					"radioGroup": "githubRbLangGroup",
+					"stroke": "#800000",
+					"method": "ObjectMethods/oRbGithubLangOff.4dm"
 				}
 			}
 		},
@@ -1308,7 +1549,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4270,
+	"geometryStamp": 4839,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

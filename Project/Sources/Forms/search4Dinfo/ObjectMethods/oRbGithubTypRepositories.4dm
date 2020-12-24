@@ -1,6 +1,10 @@
 
 Case of 
 	: (Form event code:C388=On Clicked:K2:4)
-		WA OPEN URL:C1020(*;"oWaGithub";getGithubSearchUrl)
+		If ((isGithubLangActive) & (Not:C34(isGithubTagActive)) & (Form:C1466.searchValueGithub=""))
+			setGithubLangOff
+		End if 
+		
+		WA OPEN URL:C1020(*; "oWaGithub"; getGithubSearchUrl)
 		
 End case 
