@@ -2,19 +2,21 @@
 
 Case of 
 	: (Form event code:C388=On Load:K2:1)
+		Form:C1466.cb4dCom:=1
+		Form:C1466.cbDoc4dCom:=1
+		Form:C1466.cbDoc4dComV18R5:=1
+		Form:C1466.cbKb4dCom:=1
+		Form:C1466.cbDev4dCom:=1
+		Form:C1466.cbBlog4dCom:=1
+		Form:C1466.cbEvents4dCom:=1
+		
 		Form:C1466.cbt4dCom:="4d.com"
 		Form:C1466.cbtDoc4dCom:="doc.4d.com"
 		Form:C1466.cbtDoc4dComV18R5:="doc.4d.com%2F4Dv18R5"
 		Form:C1466.cbtKb4dCom:="kb.4d.com"
 		Form:C1466.cbtDev4dCom:="developer.4d.com"
 		Form:C1466.cbtBlog4dCom:="blog.4d.com"
-		
-		Form:C1466.cb4dCom:=0
-		Form:C1466.cbDoc4dCom:=0
-		Form:C1466.cbDoc4dComV18R5:=1
-		Form:C1466.cbKb4dCom:=1
-		Form:C1466.cbDev4dCom:=1
-		Form:C1466.cbBlog4dCom:=1
+		Form:C1466.cbtEvents4dCom:="events.4d.com"
 		
 		Form:C1466.currUrlGoogle:=""
 		Form:C1466.currPageTitleGoogle:=""

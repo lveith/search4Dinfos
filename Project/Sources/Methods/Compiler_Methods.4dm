@@ -7,6 +7,9 @@ C_COLLECTION:C1488(getColGoogleGuide; $0)
 //kb4dDocReceiveInForm
 C_COLLECTION:C1488(kb4dDocReceiveInForm; $1)
 
+//setWaContentToInfo
+C_TEXT:C284(setWaContentToInfo; $1)
+
 //search4DinfosStartMain
 C_TEXT:C284(search4DinfosStartMain; $1)
 
@@ -25,9 +28,8 @@ C_BOOLEAN:C305(isGithubTagActive; $0)
 
 //getGoogleSearchUrl
 C_TEXT:C284(getGoogleSearchUrl; $0)
+C_TEXT:C284(getGoogleSearchUrl; $1)
+C_TEXT:C284(getGoogleSearchUrl; $2)
 
 //isGithubLangActive
 C_BOOLEAN:C305(isGithubLangActive; $0)
-
-//setWaContentToInfo
-C_TEXT:C284(setWaContentToInfo; $1)

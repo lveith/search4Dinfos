@@ -13,12 +13,20 @@ Case of
 		$js:=$js+"document.getElementById('top_nav').style.minWidth='752px';"
 		$js:=$js+"document.getElementById('top_nav').style.maxWidth='752px';"
 		$js:=$js+"document.getElementById('top_nav').style.overflowX='hidden';"
-		$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='14px';"
+		If (Form:C1466.currUrlGoogle#"@&tbm=vid@")
+			$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='14px';"
+			$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='0';"
+			$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.paddingLeft='14px';"
+			$js:=$js+"document.querySelectorAll('div.logo.doodle')[0].style.display='none';"
+		Else 
+			// #tsf > div.O6kumc 
+			$js:=$js+"document.querySelectorAll('#tsf > div.O6kumc')[0].style.marginLeft='14px';"
+			$js:=$js+"document.querySelectorAll('#tsf > div.O6kumc')[0].style.marginLeft='0';"
+			$js:=$js+"document.querySelectorAll('#tsf > div.O6kumc')[0].style.paddingLeft='14px';"
+			$js:=$js+"document.getElementById('logocont').style.display='none';"
+		End if 
 		$js:=$js+"document.getElementById('center_col').style.marginLeft='14px';"
 		$js:=$js+"document.getElementById('hdtb-msb-vis').style.marginLeft='14px';"
-		$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.marginLeft='0';"
-		$js:=$js+"document.querySelectorAll('#tsf > div:nth-child(2) > div[class][jsaction]')[0].style.paddingLeft='14px';"
-		$js:=$js+"document.querySelectorAll('div.logo.doodle')[0].style.display='none';"
 		$js:=$js+"document.getElementById('searchform').style.display='none';"
 		$js:=$js+"document.getElementById('sfcnt').style.display='none';"
 		$js:=$js+"document.getElementById('top_nav').style.display='none';"

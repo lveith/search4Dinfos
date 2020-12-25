@@ -100,7 +100,7 @@
 			"objects": {
 				"Viereck8": {
 					"type": "rectangle",
-					"top": 189,
+					"top": 209,
 					"left": 6,
 					"width": 243,
 					"height": 80,
@@ -123,7 +123,7 @@
 				},
 				"Viereck5": {
 					"type": "rectangle",
-					"top": 114,
+					"top": 134,
 					"left": 6,
 					"width": 243,
 					"height": 75,
@@ -147,7 +147,7 @@
 					"top": 54,
 					"left": 6,
 					"width": 243,
-					"height": 60,
+					"height": 80,
 					"stroke": "transparent",
 					"fill": "#adff2f",
 					"right": 249
@@ -187,9 +187,9 @@
 				"oColPageContGoogle": {
 					"type": "listbox",
 					"left": 6,
-					"top": 374,
+					"top": 394,
 					"width": 239,
-					"height": 324,
+					"height": 304,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -264,7 +264,7 @@
 					"type": "checkbox",
 					"text": "doc.4d.com",
 					"top": 57,
-					"left": 84,
+					"left": 146,
 					"width": 86,
 					"height": 16,
 					"events": [
@@ -347,7 +347,7 @@
 					"type": "checkbox",
 					"text": "blog.4d.com",
 					"top": 93,
-					"left": 144,
+					"left": 146,
 					"width": 92,
 					"height": 16,
 					"events": [
@@ -374,7 +374,7 @@
 				"oSearchTitleGoogle": {
 					"type": "input",
 					"left": 13,
-					"top": 149,
+					"top": 169,
 					"width": 217,
 					"height": 17,
 					"enterable": true,
@@ -388,14 +388,14 @@
 				"Text": {
 					"type": "text",
 					"text": "Search in title",
-					"top": 125,
+					"top": 145,
 					"left": 16,
 					"width": 211,
 					"height": 16
 				},
 				"Viereck6": {
 					"type": "rectangle",
-					"top": 269,
+					"top": 289,
 					"left": 6,
 					"width": 243,
 					"height": 101,
@@ -406,7 +406,7 @@
 				"oLastWaEvents": {
 					"type": "input",
 					"left": 13,
-					"top": 304,
+					"top": 324,
 					"width": 225,
 					"height": 56,
 					"enterable": true,
@@ -421,7 +421,7 @@
 				"Text1": {
 					"type": "text",
 					"text": "Last wa object events",
-					"top": 280,
+					"top": 300,
 					"left": 16,
 					"width": 195,
 					"height": 16,
@@ -430,7 +430,7 @@
 				"oBtnClearEventLog": {
 					"type": "button",
 					"text": "🗑",
-					"top": 277,
+					"top": 297,
 					"left": 221,
 					"width": 19,
 					"height": 19,
@@ -444,9 +444,9 @@
 				"oBtnTopbarON": {
 					"type": "button",
 					"text": "Topbar ON",
-					"top": 197,
-					"left": 15,
-					"width": 93,
+					"top": 258,
+					"left": 11,
+					"width": 113,
 					"height": 19,
 					"events": [
 						"onClick"
@@ -459,9 +459,9 @@
 				"oBtnTopbarOFF": {
 					"type": "button",
 					"text": "Topbar OFF",
-					"top": 197,
-					"left": 133,
-					"width": 93,
+					"top": 258,
+					"left": 129,
+					"width": 113,
 					"height": 19,
 					"events": [
 						"onClick"
@@ -524,6 +524,82 @@
 					"style": "toolbar",
 					"method": "ObjectMethods/oBtnHistoryBackGoogle.4dm",
 					"sizingX": "fixed"
+				},
+				"oCbEvents4dCom1": {
+					"type": "checkbox",
+					"text": "events.4d.com",
+					"top": 111,
+					"left": 11,
+					"width": 121,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbEvents4dCom1.4dm",
+					"dataSource": "Form:C1466.cbEvents4dCom"
+				},
+				"oBtnGoogleVideo4dSoftware": {
+					"type": "button",
+					"text": "Video 4D Software",
+					"top": 218,
+					"left": 129,
+					"width": 113,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnGoogleVideo4dSoftware.4dm",
+					"sizingX": "move",
+					"fontSize": 9
+				},
+				"oBtnGoogleVideo4dCom": {
+					"type": "button",
+					"text": "Video ....4d.com",
+					"top": 218,
+					"left": 11,
+					"width": 113,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnGoogleVideo4dCom.4dm",
+					"sizingX": "move",
+					"fontSize": 9,
+					"stroke": "#84C223",
+					"fontWeight": "bold"
+				},
+				"oBtnGoogleVideos2": {
+					"type": "button",
+					"text": "Video any 4D",
+					"top": 238,
+					"left": 129,
+					"width": 113,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnGoogleVideos2.4dm",
+					"sizingX": "move",
+					"fontSize": 9
+				},
+				"oBtnGoogleVideo4dDE": {
+					"type": "button",
+					"text": "Video 4D DE",
+					"top": 238,
+					"left": 11,
+					"width": 113,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnGoogleVideo4dDE.4dm",
+					"sizingX": "move",
+					"fontSize": 9
 				}
 			}
 		},
@@ -1606,7 +1682,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4929,
+	"geometryStamp": 4981,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
