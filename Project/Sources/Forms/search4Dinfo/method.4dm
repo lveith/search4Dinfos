@@ -2,13 +2,18 @@
 
 Case of 
 	: (Form event code:C388=On Load:K2:1)
-		Form:C1466.cb4dCom:=1
-		Form:C1466.cbDoc4dCom:=1
+		Form:C1466.cb4dCom:=0
+		Form:C1466.cbDoc4dCom:=0
 		Form:C1466.cbDoc4dComV18R5:=1
 		Form:C1466.cbKb4dCom:=1
 		Form:C1466.cbDev4dCom:=1
 		Form:C1466.cbBlog4dCom:=1
 		Form:C1466.cbEvents4dCom:=1
+		Form:C1466.cbDiscuss4dCom:=1
+		Form:C1466.cbForum4dCom:=0
+		Form:C1466.cbStackoverflowCom:=0
+		Form:C1466.cbFtpPublic4dFr:=0
+		Form:C1466.cbNabbleCom:=0
 		
 		Form:C1466.cbt4dCom:="4d.com"
 		Form:C1466.cbtDoc4dCom:="doc.4d.com"
@@ -17,6 +22,11 @@ Case of
 		Form:C1466.cbtDev4dCom:="developer.4d.com"
 		Form:C1466.cbtBlog4dCom:="blog.4d.com"
 		Form:C1466.cbtEvents4dCom:="events.4d.com"
+		Form:C1466.cbtDiscuss4dCom:="discuss.4d.com"
+		Form:C1466.cbtForum4dCom:="forum.4d.com"
+		Form:C1466.cbtStackoverflowCom:="stackoverflow.com"
+		Form:C1466.cbtFtpPublic4dFr:="ftp-public.4d.fr"
+		Form:C1466.cbtNabbleCom:="4d.1045681.n5.nabble.com"
 		
 		Form:C1466.currUrlGoogle:=""
 		Form:C1466.currPageTitleGoogle:=""

@@ -100,7 +100,7 @@
 			"objects": {
 				"Viereck8": {
 					"type": "rectangle",
-					"top": 209,
+					"top": 249,
 					"left": 6,
 					"width": 243,
 					"height": 80,
@@ -123,7 +123,7 @@
 				},
 				"Viereck5": {
 					"type": "rectangle",
-					"top": 134,
+					"top": 174,
 					"left": 6,
 					"width": 243,
 					"height": 75,
@@ -147,7 +147,7 @@
 					"top": 54,
 					"left": 6,
 					"width": 243,
-					"height": 80,
+					"height": 120,
 					"stroke": "transparent",
 					"fill": "#adff2f",
 					"right": 249
@@ -187,9 +187,9 @@
 				"oColPageContGoogle": {
 					"type": "listbox",
 					"left": 6,
-					"top": 394,
+					"top": 434,
 					"width": 239,
-					"height": 304,
+					"height": 264,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -250,7 +250,7 @@
 					"type": "checkbox",
 					"text": "4d.com",
 					"top": 57,
-					"left": 11,
+					"left": 10,
 					"width": 62,
 					"height": 16,
 					"events": [
@@ -264,7 +264,7 @@
 					"type": "checkbox",
 					"text": "doc.4d.com",
 					"top": 57,
-					"left": 146,
+					"left": 145,
 					"width": 86,
 					"height": 16,
 					"events": [
@@ -278,7 +278,7 @@
 					"type": "checkbox",
 					"text": "kb.4d.com",
 					"top": 75,
-					"left": 146,
+					"left": 145,
 					"width": 84,
 					"height": 16,
 					"events": [
@@ -292,7 +292,7 @@
 					"type": "checkbox",
 					"text": "doc.4d.com/V18R5",
 					"top": 75,
-					"left": 11,
+					"left": 10,
 					"width": 124,
 					"height": 16,
 					"events": [
@@ -333,7 +333,7 @@
 					"type": "checkbox",
 					"text": "developer.4d.com",
 					"top": 93,
-					"left": 11,
+					"left": 10,
 					"width": 121,
 					"height": 16,
 					"events": [
@@ -347,7 +347,7 @@
 					"type": "checkbox",
 					"text": "blog.4d.com",
 					"top": 93,
-					"left": 146,
+					"left": 145,
 					"width": 92,
 					"height": 16,
 					"events": [
@@ -374,7 +374,7 @@
 				"oSearchTitleGoogle": {
 					"type": "input",
 					"left": 13,
-					"top": 169,
+					"top": 209,
 					"width": 217,
 					"height": 17,
 					"enterable": true,
@@ -388,14 +388,14 @@
 				"Text": {
 					"type": "text",
 					"text": "Search in title",
-					"top": 145,
+					"top": 185,
 					"left": 16,
 					"width": 211,
 					"height": 16
 				},
 				"Viereck6": {
 					"type": "rectangle",
-					"top": 289,
+					"top": 329,
 					"left": 6,
 					"width": 243,
 					"height": 101,
@@ -406,7 +406,7 @@
 				"oLastWaEvents": {
 					"type": "input",
 					"left": 13,
-					"top": 324,
+					"top": 364,
 					"width": 225,
 					"height": 56,
 					"enterable": true,
@@ -421,7 +421,7 @@
 				"Text1": {
 					"type": "text",
 					"text": "Last wa object events",
-					"top": 300,
+					"top": 340,
 					"left": 16,
 					"width": 195,
 					"height": 16,
@@ -430,7 +430,7 @@
 				"oBtnClearEventLog": {
 					"type": "button",
 					"text": "🗑",
-					"top": 297,
+					"top": 337,
 					"left": 221,
 					"width": 19,
 					"height": 19,
@@ -444,7 +444,7 @@
 				"oBtnTopbarON": {
 					"type": "button",
 					"text": "Topbar ON",
-					"top": 258,
+					"top": 298,
 					"left": 11,
 					"width": 113,
 					"height": 19,
@@ -459,7 +459,7 @@
 				"oBtnTopbarOFF": {
 					"type": "button",
 					"text": "Topbar OFF",
-					"top": 258,
+					"top": 298,
 					"left": 129,
 					"width": 113,
 					"height": 19,
@@ -529,8 +529,8 @@
 					"type": "checkbox",
 					"text": "events.4d.com",
 					"top": 111,
-					"left": 11,
-					"width": 121,
+					"left": 145,
+					"width": 100,
 					"height": 16,
 					"events": [
 						"onLoad",
@@ -542,7 +542,7 @@
 				"oBtnGoogleVideo4dSoftware": {
 					"type": "button",
 					"text": "Video 4D Software",
-					"top": 218,
+					"top": 258,
 					"left": 129,
 					"width": 113,
 					"height": 16,
@@ -557,7 +557,7 @@
 				"oBtnGoogleVideo4dCom": {
 					"type": "button",
 					"text": "Video ....4d.com",
-					"top": 218,
+					"top": 258,
 					"left": 11,
 					"width": 113,
 					"height": 16,
@@ -574,7 +574,7 @@
 				"oBtnGoogleVideos2": {
 					"type": "button",
 					"text": "Video any 4D",
-					"top": 238,
+					"top": 278,
 					"left": 129,
 					"width": 113,
 					"height": 16,
@@ -589,7 +589,7 @@
 				"oBtnGoogleVideo4dDE": {
 					"type": "button",
 					"text": "Video 4D DE",
-					"top": 238,
+					"top": 278,
 					"left": 11,
 					"width": 113,
 					"height": 16,
@@ -600,6 +600,76 @@
 					"method": "ObjectMethods/oBtnGoogleVideo4dDE.4dm",
 					"sizingX": "move",
 					"fontSize": 9
+				},
+				"oCbStackoverflowCom": {
+					"type": "checkbox",
+					"text": "stackoverflow.com",
+					"top": 129,
+					"left": 10,
+					"width": 121,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbStackoverflowCom.4dm",
+					"dataSource": "Form:C1466.cbStackoverflowCom"
+				},
+				"oCbDiscuss4dCom": {
+					"type": "checkbox",
+					"text": "discuss.4d.com",
+					"top": 111,
+					"left": 10,
+					"width": 105,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbDiscuss4dCom.4dm",
+					"dataSource": "Form:C1466.cbDiscuss4dCom"
+				},
+				"oCbForum4dCom": {
+					"type": "checkbox",
+					"text": "forum.4d.com",
+					"top": 129,
+					"left": 145,
+					"width": 97,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbForum4dCom.4dm",
+					"dataSource": "Form:C1466.cbForum4dCom"
+				},
+				"oCbFtpPublic4dFr": {
+					"type": "checkbox",
+					"text": "ftp-public.4d.fr",
+					"top": 149,
+					"left": 10,
+					"width": 121,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbFtpPublic4dFr.4dm",
+					"dataSource": "Form:C1466.cbFtpPublic4dFr"
+				},
+				"oCbNabbleCom": {
+					"type": "checkbox",
+					"text": "nabble.com",
+					"top": 149,
+					"left": 145,
+					"width": 97,
+					"height": 16,
+					"events": [
+						"onLoad",
+						"onClick"
+					],
+					"method": "ObjectMethods/oCbNabbleCom.4dm",
+					"dataSource": "Form:C1466.cbNabbleCom"
 				}
 			}
 		},
@@ -1682,7 +1752,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4981,
+	"geometryStamp": 5067,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

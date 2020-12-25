@@ -60,6 +60,31 @@ If ($kindReduce="")
 		$opOR:="+OR+"
 	End if 
 	
+	If (Form:C1466.cbDiscuss4dCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtDiscuss4dCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbForum4dCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtForum4dCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbStackoverflowCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtStackoverflowCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbFtpPublic4dFr>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtFtpPublic4dFr
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbNabbleCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtNabbleCom
+		$opOR:="+OR+"
+	End if 
+	
 End if 
 
 // --------

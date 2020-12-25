@@ -115,7 +115,7 @@ Case of
 		$obj.typ:="URL Loading Error #"+String:C10($errorCode)+" "+$description
 		$obj.content:=$url
 		Form:C1466.colPageContGoogle.push($obj)
-		If (True:C214)
+		If ($url#"https://www.google.com/sorry/index@")
 			setWaContentToInfo("oWaGoogle")
 		End if 
 		
