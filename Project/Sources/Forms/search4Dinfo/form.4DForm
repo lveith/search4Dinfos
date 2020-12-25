@@ -110,9 +110,9 @@
 				},
 				"oProgressWaGoogle": {
 					"type": "progress",
-					"left": 283,
+					"left": 313,
 					"top": 38,
-					"width": 757,
+					"width": 727,
 					"height": 18,
 					"sizingX": "grow",
 					"dataSource": "Form:C1466.progressWaGoogle",
@@ -154,9 +154,9 @@
 				},
 				"oCurrPageUrlGoogle": {
 					"type": "input",
-					"left": 284,
+					"left": 314,
 					"top": 30,
-					"width": 757,
+					"width": 727,
 					"height": 17,
 					"enterable": true,
 					"contextMenu": "none",
@@ -164,7 +164,8 @@
 					"placeholder": "current page url",
 					"dataSource": "Form:C1466.currUrlGoogle",
 					"sizingX": "grow",
-					"borderStyle": "none"
+					"borderStyle": "none",
+					"hideFocusRing": true
 				},
 				"oCurrPageTitle": {
 					"type": "input",
@@ -356,18 +357,18 @@
 					"method": "ObjectMethods/oCbBlog4dCom.4dm",
 					"dataSource": "Form:C1466.cbBlog4dCom"
 				},
-				"oBtnLoadGoogle": {
+				"oBtnReLoadGoogle": {
 					"type": "button",
 					"text": "⟳",
 					"top": 29,
-					"left": 262,
-					"width": 19,
+					"left": 294,
+					"width": 17,
 					"height": 19,
 					"events": [
 						"onClick"
 					],
 					"style": "toolbar",
-					"method": "ObjectMethods/oBtnLoadGoogle.4dm",
+					"method": "ObjectMethods/oBtnReLoadGoogle.4dm",
 					"sizingX": "fixed"
 				},
 				"oSearchTitleGoogle": {
@@ -495,6 +496,34 @@
 						"onWindowOpeningDenied"
 					],
 					"progressSource": "Form.progressWaGoogle"
+				},
+				"oBtnHistoryForwardGoogle": {
+					"type": "button",
+					"text": "▶︎",
+					"top": 29,
+					"left": 277,
+					"width": 14,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnHistoryForwardGoogle.4dm",
+					"sizingX": "fixed"
+				},
+				"oBtnHistoryBackGoogle": {
+					"type": "button",
+					"text": "◀︎",
+					"top": 29,
+					"left": 262,
+					"width": 14,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnHistoryBackGoogle.4dm",
+					"sizingX": "fixed"
 				}
 			}
 		},
@@ -502,9 +531,9 @@
 			"objects": {
 				"oProgressWaGithub": {
 					"type": "progress",
-					"left": 283,
+					"left": 313,
 					"top": 38,
-					"width": 757,
+					"width": 727,
 					"height": 18,
 					"sizingX": "grow",
 					"dataSource": "Form:C1466.progressWaGithub",
@@ -658,9 +687,9 @@
 				},
 				"oCurrPageUrlGithub": {
 					"type": "input",
-					"left": 284,
+					"left": 314,
 					"top": 30,
-					"width": 757,
+					"width": 727,
 					"height": 17,
 					"enterable": true,
 					"contextMenu": "none",
@@ -852,20 +881,6 @@
 					"radioGroup": "githubRbExtGroup",
 					"stroke": "#191970",
 					"method": "ObjectMethods/oRbGithubExt4DSettings.4dm"
-				},
-				"oBtnLoadGithubUrl": {
-					"type": "button",
-					"text": "⟳",
-					"top": 29,
-					"left": 262,
-					"width": 19,
-					"height": 19,
-					"events": [
-						"onClick"
-					],
-					"style": "toolbar",
-					"method": "ObjectMethods/oBtnLoadGithubUrl.4dm",
-					"sizingX": "fixed"
 				},
 				"Viereck7": {
 					"type": "rectangle",
@@ -1240,6 +1255,48 @@
 					"radioGroup": "githubRbLangGroup",
 					"stroke": "#800000",
 					"method": "ObjectMethods/oRbGithubLangOff.4dm"
+				},
+				"oBtnReLoadGithub": {
+					"type": "button",
+					"text": "⟳",
+					"top": 29,
+					"left": 294,
+					"width": 17,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnReLoadGithub.4dm",
+					"sizingX": "fixed"
+				},
+				"oBtnHistoryForwardGithub": {
+					"type": "button",
+					"text": "▶︎",
+					"top": 29,
+					"left": 277,
+					"width": 14,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnHistoryForwardGithub.4dm",
+					"sizingX": "fixed"
+				},
+				"oBtnHistoryBackGithub": {
+					"type": "button",
+					"text": "◀︎",
+					"top": 29,
+					"left": 262,
+					"width": 14,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnHistoryBackGithub.4dm",
+					"sizingX": "fixed"
 				}
 			}
 		},
@@ -1549,7 +1606,7 @@
 			}
 		}
 	],
-	"geometryStamp": 4859,
+	"geometryStamp": 4929,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

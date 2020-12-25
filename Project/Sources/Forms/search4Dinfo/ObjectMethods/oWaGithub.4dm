@@ -78,6 +78,9 @@ Case of
 		$obj.typ:="URL Loading Error #"+String:C10($errorCode)+" "+$description
 		$obj.content:=$url
 		Form:C1466.colPageContGithub.push($obj)
+		If (True:C214)
+			setWaContentToInfo("oWaGithub")
+		End if 
 		
 	: (Form event code:C388=On URL Filtering:K2:49)
 		$resultTxt:=WA Get last filtered URL:C1035(*; "oWaGithub")

@@ -28,3 +28,6 @@ C_TEXT:C284(getGoogleSearchUrl; $0)
 
 //isGithubLangActive
 C_BOOLEAN:C305(isGithubLangActive; $0)
+
+//setWaContentToInfo
+C_TEXT:C284(setWaContentToInfo; $1)

@@ -23,6 +23,8 @@ Case of
 		Form:C1466.colPageContGoogle:=New collection:C1472
 		
 		Case of 
+			: (Form:C1466.currPageTitle="@(#Error url cannot load)@")
+				
 			: (Form:C1466.currUrlGoogle="https://www.google.com/search?q=@")
 				$js:=""
 				$js:=$js+"document.documentElement.style.overflowX='scroll';"
@@ -105,6 +107,9 @@ Case of
 		$obj.typ:="URL Loading Error #"+String:C10($errorCode)+" "+$description
 		$obj.content:=$url
 		Form:C1466.colPageContGoogle.push($obj)
+		If (True:C214)
+			setWaContentToInfo("oWaGoogle")
+		End if 
 		
 	: (Form event code:C388=On URL Filtering:K2:49)
 		$resultTxt:=WA Get last filtered URL:C1035(*; "oWaGoogle")
