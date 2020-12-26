@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>4D Knowledge Base assetid=78586</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/120130kbdt.css" media="screen" type="text/css" title="mediumtext">
+    <link href="css/20141208dt.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="main">
+        <div id="assetView" class="assetArea">
+          <div class="detailtitle">Tech Tip: Sending Un-Hashed Password with Open Datastore
+          </div>
+          <div class="detailtitle2">PRODUCT: 4D | VERSION: 18 | PLATFORM: Mac &amp; Win | 
+            <a href="https://kb.4d.com/assetid=78586" target="_blank">https://kb.4d.com/assetid=78586</a>
+          </div>
+          <div class="detailtitle3">Published On: November 24, 2020
+          </div>
+          <div class="detailbody">
+            <p style="font-size: 12px;">The 
+              <span class="TT4DCommand">Open Datastore
+              </span> command can be useful for accessing data in an external 4D database. Using 
+              <span class="TT4DCommand">Open Datastore
+              </span> creates a REST session and triggers the On REST Authentication database method on the REST server. When a REST connection reqest is made from 
+              <span class="TT4DCommand">Open datastore
+              </span>, the password is always sent and recieved in hashed form. An example of this is shown below.
+              <br>
+              <br>Method to request connection to remote datastore. In the $connectTo object, the session username is "Designer" and the password is "a".
+              <br>
+            </p>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DCommand">C_OBJECT</span>(
+                    <span class="TT4DLocalVar">$connectTo</span>;
+                    <span class="TT4DLocalVar">$remoteDS</span>)
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>:=
+                    <span class="TT4DCommand">New object</span>
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.type</span>:="4D Server"
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.hostname</span>:="{Server IP}:{Port}"
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.user</span>:="Designer"
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.password</span>:="a"
+                    <br>
+                    <span class="TT4DLocalVar">$remoteDS</span>:=
+                    <span class="TT4DCommand">Open datastore</span>(
+                    <span class="TT4DLocalVar">$connectTo</span>;"myLocalId")
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>However, in the on REST Authentication database method on the server, the password received in $2 is in hashed format.
+            <br>
+            <img src="./images/78586-1.jpg" style="max-width: 550px;">
+            <br>
+            <br>Sometimes retrieving the un-hashed password may be desired when working with user lists that are external to the 4D database. To send and retrieve un-hashed passwords with 
+            <span class="TT4DCommand">Open datastore
+            </span>, the session username and passord can be sent in a combined string in $connectTo.user. An example of thie is shown below.
+            <br>
+            <br>Method to request connection to remote datastore. The session username and password are combined and passed as the username ("Designer:a").
+            <br>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DCommand">C_OBJECT</span>(
+                    <span class="TT4DLocalVar">$connectTo</span>;
+                    <span class="TT4DLocalVar">$remoteDS</span>)
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>:=
+                    <span class="TT4DCommand">New object</span>
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.type</span>:="4D Server"
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.hostname</span>:="{Server IP}:{Port}"
+                    <br>
+                    <span class="TT4DLocalVar">$connectTo</span>
+                    <span class="TT4DObjProperty">.user</span>:="Designer:a"
+                    <br>
+                    <span class="TT4DLocalVar">$remoteDS</span>:=
+                    <span class="TT4DCommand">Open datastore</span>(
+                    <span class="TT4DLocalVar">$connectTo</span>;"myLocalId")
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>The username and the un-hashed password are retreived as the username in $1 in the On REST Authentication database method.
+            <br>
+            <img src="./images/78586-2.jpg" style="max-width: 550px;">
+            <br>
+            <br>The un-hashed password can then be collected from $1. The code below shows an example of this.
+            <br>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DLocalVar">$UserPass_t</span>:=
+                    <span class="TT4DParameter">$1</span>
+                    <br>
+                    <span class="TT4DLocalVar">$UserPass_c</span>:=
+                    <span class="TT4DCommand">Split string</span>(
+                    <span class="TT4DLocalVar">$UserPass_t</span>;":")
+                    <br>
+                    <span class="TT4DCommand">If</span> (
+                    <span class="TT4DLocalVar">$UserPass_c</span>
+                    <span class="TT4DObjProperty">.length</span>=2)
+                    <br>&nbsp;&nbsp;	
+                    <span class="TT4DLocalVar">$username</span>:=
+                    <span class="TT4DLocalVar">$UserPass_c</span>[0]
+                    <br>&nbsp;&nbsp;	
+                    <span class="TT4DLocalVar">$password</span>:=
+                    <span class="TT4DLocalVar">$UserPass_c</span>[1]
+                    <br>
+                    <span class="TT4DCommand">End if</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -20,7 +20,11 @@ Case of
 							: (Value type:C1509(Form:C1466.localLibCurrEl.url)#Is text:K8:3)
 							: (Form:C1466.localLibCurrEl.url="")
 							Else 
-								WA OPEN URL:C1020(*; "oWaLocalLib"; Form:C1466.localLibCurrEl.url)
+								If (Form:C1466.localLibCurrEl.url[[1]]="*")
+									WA OPEN URL:C1020(*; "oWaLocalLib"; "file:///"+Convert path system to POSIX:C1106(Get 4D folder:C485(Current resources folder:K5:16))+"/html/"+Substring:C12(Form:C1466.localLibCurrEl.url; 2))
+								Else 
+									WA OPEN URL:C1020(*; "oWaLocalLib"; Form:C1466.localLibCurrEl.url)
+								End if 
 						End case 
 						
 					End if 

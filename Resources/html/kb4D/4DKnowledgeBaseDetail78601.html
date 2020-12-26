@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>4D Knowledge Base assetid=78601</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/120130kbdt.css" media="screen" type="text/css" title="mediumtext">
+    <link href="css/20141208dt.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="main">
+        <div id="assetView" class="assetArea">
+          <div class="detailtitle">Tech Tip: Utility Method to Get Web Area's Web Rendering Engine
+          </div>
+          <div class="detailtitle2">PRODUCT: 4D | VERSION: 18 | PLATFORM: Mac &amp; Win | 
+            <a href="https://kb.4d.com/assetid=78601" target="_blank">https://kb.4d.com/assetid=78601</a>
+          </div>
+          <div class="detailtitle3">Published On: December 15, 2020
+          </div>
+          <div class="detailbody">
+            <p style="font-size: 12px;">Below is a utility method to detect which web rendering engine is being used for a Web Area. the code only checks for the most frequently used browsers:
+              <br>
+            </p>
+            <ul>
+              <li>Internet Explorer
+              </li>
+              <li>Safari
+              </li>
+              <li>Chrome
+              </li>
+              <li>Firefox
+              </li>
+              <li>Apple Web Kit (MacOS)
+              </li>
+            </ul>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DComment">// Method: Util_WA_GetWebEngine</span>
+                    <br>
+                    <span class="TT4DComment">// Description</span>
+                    <br>
+                    <span class="TT4DComment">// Returns a 4D Web Area's Web Engine based on</span>
+                    <br>
+                    <span class="TT4DComment">//   the userAgent object</span>
+                    <br>
+                    <span class="TT4DComment">//</span>
+                    <br>
+                    <span class="TT4DComment">// Parameters</span>
+                    <br>
+                    <span class="TT4DComment">//  $1 - Text : Name of Web Area object</span>
+                    <br>
+                    <span class="TT4DComment">//       - Pointer : Pointer to Variable of Web Area object</span>
+                    <br>
+                    <span class="TT4DComment">//</span>
+                    <br>
+                    <span class="TT4DComment">//  $0 - Object : Contains two properties</span>
+                    <br>
+                    <span class="TT4DComment">//         {"Browser" : Name of Browser,</span>
+                    <br>
+                    <span class="TT4DComment">//          "userAgent" : Full user agent string}   </span>
+                    <br>
+                    <span class="TT4DComment">// ----------------------------------------------------</span>
+                    <br>
+                    <br>
+                    <span class="TT4DCommand">C_OBJECT</span>(
+                    <span class="TT4DParameter">$0</span>)
+                    <br>
+                    <span class="TT4DCommand">C_VARIANT</span>(
+                    <span class="TT4DParameter">$1</span>)
+                    <br>
+                    <br>
+                    <span class="TT4DCommand">C_POINTER</span>(
+                    <span class="TT4DLocalVar">$waPtr</span>)
+                    <br>
+                    <span class="TT4DCommand">C_TEXT</span>(
+                    <span class="TT4DLocalVar">$currURL</span>)
+                    <br>
+                    <span class="TT4DCommand">C_TEXT</span>(
+                    <span class="TT4DLocalVar">$js_t</span>)
+                    <br>
+                    <span class="TT4DCommand">C_OBJECT</span>(
+                    <span class="TT4DLocalVar">$res_ob</span>)
+                    <br>
+                    <br>
+                    <span class="TT4DCommand">If</span> ((
+                    <span class="TT4DCommand">Value type</span>(
+                    <span class="TT4DParameter">$1</span>)=
+                    <span class="TT4DConstant">Is pointer</span>) | (
+                    <span class="TT4DCommand">Value type</span>(
+                    <span class="TT4DParameter">$1</span>)=
+                    <span class="TT4DConstant">Is text</span>))
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DCommand">If</span> (
+                    <span class="TT4DCommand">Value type</span>(
+                    <span class="TT4DParameter">$1</span>)=
+                    <span class="TT4DConstant">Is text</span>)
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;                
+                    <span class="TT4DLocalVar">$waPtr</span>:=
+                    <span class="TT4DCommand">OBJECT Get pointer</span>(
+                    <span class="TT4DConstant">Object named</span>;
+                    <span class="TT4DParameter">$1</span>)
+                    <br>&nbsp;&nbsp;       
+                    <span class="TT4DCommand"> Else </span>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;                
+                    <span class="TT4DLocalVar">$waPtr</span>:=
+                    <span class="TT4DParameter">$1</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DCommand">End if</span> 
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$currURL</span>:=
+                    <span class="TT4DCommand">WA Get current URL</span>(
+                    <span class="TT4DLocalVar">$waPtr</span>-&gt;)
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DCommand">If</span> ((
+                    <span class="TT4DLocalVar">$currURL</span>=":///") | (
+                    <span class="TT4DLocalVar">$currURL</span>=""))
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;                
+                    <span class="TT4DCommand">WA OPEN URL</span>(
+                    <span class="TT4DLocalVar">$waPtr</span>-&gt;;"about:blank")
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DCommand">End if</span>
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:="var res={\"userAgent\":navigator.userAgent};"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DComment">//Chrome</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"if(navigator.userAgent.indexOf(\"Chrome\") &gt; -1)  "
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"{ res.Browser=\"Chrome\"}"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DComment">//Safari</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"else if(navigator.userAgent.indexOf(\"Safari\") &gt; -1)"
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"  {res.Browser=\"Safari\";}"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DComment">//Internet Explorer</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"else if(navigator.userAgent.indexOf(\"MSIE\") &gt; -1 || "
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"navigator.userAgent.indexOf(\"rv:\") &gt; -1)"
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"  {res.Browser= \"IE\";}"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DComment">//Firefox</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"else if(navigator.userAgent.indexOf(\"Firefox\") &gt; -1)"
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+" {res.Browser=\"Firefox\";}"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DComment">//AppleWebKit</span>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"else if(navigator.userAgent.indexOf(\"Macintosh\") &gt; -1)"
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"  {res.Browser=\"AppleWebKit\";}"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$js_t</span>:=
+                    <span class="TT4DLocalVar">$js_t</span>+"; res"
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DLocalVar">$res_ob</span>:=
+                    <span class="TT4DCommand">WA Evaluate JavaScript</span>(
+                    <span class="TT4DLocalVar">$waPtr</span>-&gt;;
+                    <span class="TT4DLocalVar">$js_t</span>;
+                    <span class="TT4DConstant">Is object</span>)
+                    <br>
+                    <br>&nbsp;&nbsp;        
+                    <span class="TT4DParameter">$0</span> := 
+                    <span class="TT4DLocalVar">$res_ob</span>
+                    <br>
+                    <span class="TT4DCommand">End if</span> 
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>Below is an example of using the command:
+            <br>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DComment">// "Web Area" is the name of the Web Area object</span>
+                    <br>
+                    <span class="TT4DLocalVar">$currentEngine_t</span> := 
+                    <span class="TT4DMethod">Util_WA_GetWebEngine</span>("Web Area")
+                  </td>
+                </tr>
+              </tbody>
+            </table>or
+            <br>
+            <table class="TT4DCodeTable">
+              <tbody>
+                <tr>
+                  <td class="TT4DCode">
+                    <span class="TT4DComment">// varWA is the variable of the Web Area object</span>
+                    <br>
+                    <span class="TT4DLocalVar">$currentEngine_t</span> := 
+                    <span class="TT4DMethod">Util_WA_GetWebEngine</span>(-&gt;
+                    <span class="TT4DProcVar">varWA</span>)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>An example result:
+            <br>{"Browser" : "Chrome",
+            <br> "userAgent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"}
+            <br>
+            <br>If the embedded web rendering engine is not being used, a method like this can help identify the engine and help with debugging issues or enforcing consistency due to differences in the engines.
+            <br>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

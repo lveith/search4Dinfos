@@ -1,14 +1,14 @@
 //%attributes = {"preemptive":"capable"}
 // PM: "kb4dDocWorker"
 
-C_LONGINT:C283($winRef;$1)
-C_TEXT:C284($searchValue;$2)
+C_LONGINT:C283($winRef; $1)
+C_TEXT:C284($searchValue; $2)
 
-C_TEXT:C284($urlKbSearch;$responseText)
+C_TEXT:C284($urlKbSearch; $responseText)
 C_LONGINT:C283($httpStatusCode)
-C_LONGINT:C283($count;$sent;$first;$received)
-C_OBJECT:C1216($obj;$objB)
-C_LONGINT:C283($pos4DSID;$posQstring)
+C_LONGINT:C283($count; $sent; $first; $received)
+C_OBJECT:C1216($obj; $objB)
+C_LONGINT:C283($pos4DSID; $posQstring)
 C_TEXT:C284($currErrMethode)
 
 If (Count parameters:C259>0)
@@ -21,17 +21,19 @@ End if
 If ($winRef#0)
 	$colKb4dDoc:=New collection:C1472
 	
+	// https://kb.4d.com/search?mode=rest&query=&type=All%20Solutions&version=All%20versions&product=All%20products&time=All&pp=&cc=
+	
 	$urlKbSearch:="https://kb.4d.com/search?mode=rest&query="+$searchValue+"&type=All%20Solutions&version=All%20versions&product=All%20products&time=All&pp=&cc="
-	ARRAY TEXT:C222($aHeaderNames;0)
-	ARRAY TEXT:C222($aHeaderValues;0)
+	ARRAY TEXT:C222($aHeaderNames; 0)
+	ARRAY TEXT:C222($aHeaderValues; 0)
 	
 	OK:=0
 	Error:=0
 	$currErrMethode:=Method called on error:C704
 	ON ERR CALL:C155("yErrCallNum")
-	$httpStatusCode:=HTTP Get:C1157($urlKbSearch;$responseText;$aHeaderNames;$aHeaderValues;*)
+	$httpStatusCode:=HTTP Get:C1157($urlKbSearch; $responseText; $aHeaderNames; $aHeaderValues; *)
 	If ((OK#0) | (Error#0))
-		$httpStatusCode:=HTTP Get:C1157($urlKbSearch;$responseText;$aHeaderNames;$aHeaderValues;*)
+		$httpStatusCode:=HTTP Get:C1157($urlKbSearch; $responseText; $aHeaderNames; $aHeaderValues; *)
 	End if 
 	ON ERR CALL:C155($currErrMethode)
 	OK:=0
@@ -47,26 +49,58 @@ If ($winRef#0)
 		$obj:=JSON Parse:C1218($responseText)
 		// SET TEXT TO PASTEBOARD(JSON Stringify($obj;*))
 		$received:=0
-		$count:=OB Get:C1224($obj;"__COUNT";Is longint:K8:6)
-		$sent:=OB Get:C1224($obj;"__SENT";Is longint:K8:6)
-		$first:=OB Get:C1224($obj;"__FIRST";Is longint:K8:6)
+		$count:=OB Get:C1224($obj; "__COUNT"; Is longint:K8:6)
+		$sent:=OB Get:C1224($obj; "__SENT"; Is longint:K8:6)
+		$first:=OB Get:C1224($obj; "__FIRST"; Is longint:K8:6)
 		$received:=$received+$sent
-		$colKb4dDoc:=OB Get:C1224($obj;"__ASSETS";Is collection:K8:32)
-		CALL FORM:C1391($winRef;"kb4dDocReceiveInForm";$colKb4dDoc)
+		$colKb4dDoc:=OB Get:C1224($obj; "__ASSETS"; Is collection:K8:32)
+		
+		$pos4DSID:=Find in array:C230($aHeaderValues; "4DSID=@")
+		$posQstring:=Find in array:C230($aHeaderValues; "qstring=@")
+		If ($pos4DSID>0)
+			$txt4DSID:=Split string:C1554($aHeaderValues{$pos4DSID}; ";")[0]+"; "
+		End if 
+		If ($posQstring>0)
+			$txtQstring:=Split string:C1554($aHeaderValues{$posQstring}; ";")[0]
+		End if 
+		
+		If (False:C215)
+			$urlKbSearch:="https://kb.4d.com/show?assetid=78607&pos=1&mode=rest"
+			ARRAY TEXT:C222($aHeaderNames; 0)
+			ARRAY TEXT:C222($aHeaderValues; 0)
+			APPEND TO ARRAY:C911($aHeaderNames; "Content-Type")
+			APPEND TO ARRAY:C911($aHeaderValues; "text/plain;charset=UTF-8")
+			APPEND TO ARRAY:C911($aHeaderNames; "Accept")
+			APPEND TO ARRAY:C911($aHeaderValues; "*/*")
+			APPEND TO ARRAY:C911($aHeaderNames; "Pragma")
+			APPEND TO ARRAY:C911($aHeaderValues; "no-cache")
+			If (($pos4DSID>0) & ($posQstring>0))
+				APPEND TO ARRAY:C911($aHeaderNames; "Cookie")
+				APPEND TO ARRAY:C911($aHeaderValues; $txt4DSID+$txtQstring)
+			End if 
+			APPEND TO ARRAY:C911($aHeaderNames; "Cache-Control")
+			APPEND TO ARRAY:C911($aHeaderValues; "no-cache")
+			APPEND TO ARRAY:C911($aHeaderNames; "Host")
+			APPEND TO ARRAY:C911($aHeaderValues; "kb.4d.com")
+			APPEND TO ARRAY:C911($aHeaderNames; "Origin")
+			APPEND TO ARRAY:C911($aHeaderValues; "https://kb.4d.com")
+			APPEND TO ARRAY:C911($aHeaderNames; "Referer")
+			APPEND TO ARRAY:C911($aHeaderValues; "https://kb.4d.com/")
+			APPEND TO ARRAY:C911($aHeaderNames; "Accept-Language")
+			APPEND TO ARRAY:C911($aHeaderValues; "en-en")
+			APPEND TO ARRAY:C911($aHeaderNames; "Accept-Encoding")
+			APPEND TO ARRAY:C911($aHeaderValues; "gzip, deflate, br")
+			APPEND TO ARRAY:C911($aHeaderNames; "Connection")
+			APPEND TO ARRAY:C911($aHeaderValues; "keep-alive")
+			$httpStatusCode:=HTTP Get:C1157($urlKbSearch; $responseText; $aHeaderNames; $aHeaderValues; *)
+		End if 
+		
+		CALL FORM:C1391($winRef; "kb4dDocReceiveInForm"; $colKb4dDoc)
 	Else 
 		$received:=0
 		$count:=0
 		$sent:=0
 		$first:=0
-	End if 
-	
-	$pos4DSID:=Find in array:C230($aHeaderValues;"4DSID=@")
-	$posQstring:=Find in array:C230($aHeaderValues;"qstring=@")
-	If ($pos4DSID>0)
-		$txt4DSID:=Split string:C1554($aHeaderValues{$pos4DSID};";")[0]+"; "
-	End if 
-	If ($posQstring>0)
-		$txtQstring:=Split string:C1554($aHeaderValues{$posQstring};";")[0]
 	End if 
 	
 	// Request
@@ -94,31 +128,31 @@ If ($winRef#0)
 	If (True:C214)
 		While (($httpStatusCode=200) & ($received<$count))
 			$urlKbSearch:="https://kb.4d.com/search?mode=rest&nav=pnext&pos=0"
-			ARRAY TEXT:C222($aHeaderNames;0)
-			ARRAY TEXT:C222($aHeaderValues;0)
-			APPEND TO ARRAY:C911($aHeaderNames;"Accept")
-			APPEND TO ARRAY:C911($aHeaderValues;"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-			APPEND TO ARRAY:C911($aHeaderNames;"Pragma")
-			APPEND TO ARRAY:C911($aHeaderValues;"no-cache")
+			ARRAY TEXT:C222($aHeaderNames; 0)
+			ARRAY TEXT:C222($aHeaderValues; 0)
+			APPEND TO ARRAY:C911($aHeaderNames; "Accept")
+			APPEND TO ARRAY:C911($aHeaderValues; "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+			APPEND TO ARRAY:C911($aHeaderNames; "Pragma")
+			APPEND TO ARRAY:C911($aHeaderValues; "no-cache")
 			If (($pos4DSID>0) & ($posQstring>0))
-				APPEND TO ARRAY:C911($aHeaderNames;"Cookie")
-				APPEND TO ARRAY:C911($aHeaderValues;$txt4DSID+$txtQstring)
+				APPEND TO ARRAY:C911($aHeaderNames; "Cookie")
+				APPEND TO ARRAY:C911($aHeaderValues; $txt4DSID+$txtQstring)
 			End if 
-			APPEND TO ARRAY:C911($aHeaderNames;"Cache-Control")
-			APPEND TO ARRAY:C911($aHeaderValues;"no-cache")
-			APPEND TO ARRAY:C911($aHeaderNames;"Host")
-			APPEND TO ARRAY:C911($aHeaderValues;"kb.4d.com")
-			APPEND TO ARRAY:C911($aHeaderNames;"Accept-Encoding")
-			APPEND TO ARRAY:C911($aHeaderValues;"gzip, deflate, br")
-			APPEND TO ARRAY:C911($aHeaderNames;"Connection")
-			APPEND TO ARRAY:C911($aHeaderValues;"keep-alive")
-			$httpStatusCode:=HTTP Get:C1157($urlKbSearch;$responseText;$aHeaderNames;$aHeaderValues;*)
+			APPEND TO ARRAY:C911($aHeaderNames; "Cache-Control")
+			APPEND TO ARRAY:C911($aHeaderValues; "no-cache")
+			APPEND TO ARRAY:C911($aHeaderNames; "Host")
+			APPEND TO ARRAY:C911($aHeaderValues; "kb.4d.com")
+			APPEND TO ARRAY:C911($aHeaderNames; "Accept-Encoding")
+			APPEND TO ARRAY:C911($aHeaderValues; "gzip, deflate, br")
+			APPEND TO ARRAY:C911($aHeaderNames; "Connection")
+			APPEND TO ARRAY:C911($aHeaderValues; "keep-alive")
+			$httpStatusCode:=HTTP Get:C1157($urlKbSearch; $responseText; $aHeaderNames; $aHeaderValues; *)
 			If ($httpStatusCode=200)  // 200 OK (successful HTTP requests)
 				If ($responseText="{@")
 					$objB:=JSON Parse:C1218($responseText)
-					$received:=$received+OB Get:C1224($objB;"__SENT";Is longint:K8:6)
-					$colKb4dDoc:=OB Get:C1224($objB;"__ASSETS";Is collection:K8:32)
-					CALL FORM:C1391($winRef;"kb4dDocReceiveInForm";$colKb4dDoc)
+					$received:=$received+OB Get:C1224($objB; "__SENT"; Is longint:K8:6)
+					$colKb4dDoc:=OB Get:C1224($objB; "__ASSETS"; Is collection:K8:32)
+					CALL FORM:C1391($winRef; "kb4dDocReceiveInForm"; $colKb4dDoc)
 				Else 
 					$httpStatusCode:=400  // 400 Bad Request (The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing))
 				End if 

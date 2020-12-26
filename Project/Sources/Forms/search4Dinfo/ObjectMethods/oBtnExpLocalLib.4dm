@@ -2,48 +2,6 @@
 
 Case of 
 	: (Form event code:C388=On Clicked:K2:4)
-		
-		If (True:C214)
-			C_OBJECT:C1216($obj)
-			Form:C1466.colLocalLib:=New collection:C1472
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_US"
-			$obj.url:="https://us.4d.com"
-			$obj.cmt:="4D homepage (United States, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'united-states' 'us' 'usa' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_FR"
-			$obj.url:="https://fr.4d.com"
-			$obj.cmt:="4D homepage (France, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'france' 'fr' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_DE"
-			$obj.url:="https://de.4d.com"
-			$obj.cmt:="4D homepage (Deutschland, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'deutschland' 'de' 'german' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="k2"
-			$obj.cmt:="cmt-k2"
-			$obj.tag:="'test2'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="k3"
-			$obj.cmt:="cmt-k3"
-			$obj.tag:="'test3'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			Form:C1466.colLocalLibALL:=Form:C1466.colLocalLib
-			
-		End if 
-		
 		C_BLOB:C604($blob)
 		C_BOOLEAN:C305($ok)
 		C_TEXT:C284($appName; $timeStamp)

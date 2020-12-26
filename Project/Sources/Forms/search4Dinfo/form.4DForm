@@ -1946,7 +1946,7 @@
 					"left": 7,
 					"top": 52,
 					"width": 1034,
-					"height": 285,
+					"height": 185,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -1962,7 +1962,7 @@
 					"currentItemPositionSource": "Form:C1466.localLibCurrPos",
 					"selectedItemsSource": "Form:C1466.localLibCurrSel",
 					"method": "ObjectMethods/oColLocalLib.4dm",
-					"bottom": 337,
+					"bottom": 237,
 					"columns": [
 						{
 							"header": {
@@ -1983,7 +1983,7 @@
 							},
 							"name": "Spalte7",
 							"dataSource": "This:C1470.url",
-							"width": 182,
+							"width": 274,
 							"footer": {
 								"name": "Fußteil21"
 							}
@@ -1995,7 +1995,7 @@
 							},
 							"name": "Spalte5",
 							"dataSource": "This:C1470.cmt",
-							"width": 575,
+							"width": 464,
 							"footer": {
 								"name": "Fußteil19"
 							}
@@ -2009,7 +2009,9 @@
 							"dataSource": "This:C1470.tag",
 							"footer": {
 								"name": "Fußteil20"
-							}
+							},
+							"truncateMode": "none",
+							"width": 509
 						}
 					]
 				},
@@ -2058,7 +2060,7 @@
 				"Splitter3": {
 					"type": "splitter",
 					"left": 0,
-					"top": 342,
+					"top": 242,
 					"width": 1041,
 					"height": 3,
 					"sizingX": "grow"
@@ -2066,9 +2068,9 @@
 				"oWaLocalLib": {
 					"type": "webArea",
 					"left": 6,
-					"top": 350,
+					"top": 250,
 					"width": 1034,
-					"height": 349,
+					"height": 449,
 					"method": "ObjectMethods/oWaLocalLib.4dm",
 					"webEngine": "embedded",
 					"dataSource": "gWaLocalLib",
@@ -2146,7 +2148,7 @@
 			}
 		}
 	],
-	"geometryStamp": 5832,
+	"geometryStamp": 5847,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
