@@ -64,6 +64,8 @@ Case of
 				
 		End case 
 		
+		clearKb4dFilters
+		
 End case 
 
 // - EOF -

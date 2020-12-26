@@ -9,7 +9,7 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		
 		$colDistinctProductVersion:=Form:C1466.colKb4dCom.distinct("productVersion")
-		$colDistinctProductVersion.insert(0; "<Filter OFF>")
+		$colDistinctProductVersion.insert(0; "<Clear all filters>")
 		$colDistinctProductVersion.insert(1; "<emptyString>")
 		$colDistinctProductVersion.insert(2; "<null>")
 		$vtItems:=$colDistinctProductVersion.join(Char:C90(13); ck ignore null or empty:K85:5)
@@ -26,10 +26,11 @@ Case of
 			: ($vlUserChoice>$colDistinctProductVersion.length)
 				BEEP:C151
 				
-			: ($colDistinctProductVersion[$vlUserChoice-1]="<Filter OFF>")
+			: ($colDistinctProductVersion[$vlUserChoice-1]="<Clear all filters>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
 				OBJECT SET TITLE:C194(*; "oBtnFilterProductVersion"; "productVersion")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterProductVersion"; "Filter productVersion")
+				clearKb4dFilters
 				
 			: ($colDistinctProductVersion[$vlUserChoice-1]="<emptyString>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("productVersion = ''")

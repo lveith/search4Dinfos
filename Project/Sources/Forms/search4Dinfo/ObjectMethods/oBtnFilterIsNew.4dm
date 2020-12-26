@@ -9,7 +9,7 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		
 		$colDistinctIsNew:=Form:C1466.colKb4dCom.distinct("isnew")
-		$colDistinctIsNew.insert(0; "<Filter OFF>")
+		$colDistinctIsNew.insert(0; "<Clear all filters>")
 		$colDistinctIsNew.insert(1; "<emptyString>")
 		$colDistinctIsNew.insert(2; "<null>")
 		$vtItems:=$colDistinctIsNew.join(Char:C90(13); ck ignore null or empty:K85:5)
@@ -26,10 +26,11 @@ Case of
 			: ($vlUserChoice>$colDistinctIsNew.length)
 				BEEP:C151
 				
-			: ($colDistinctIsNew[$vlUserChoice-1]="<Filter OFF>")
+			: ($colDistinctIsNew[$vlUserChoice-1]="<Clear all filters>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
 				OBJECT SET TITLE:C194(*; "oBtnFilterIsNew"; "isnew")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterIsNew"; "Filter isnew")
+				clearKb4dFilters
 				
 			: ($colDistinctIsNew[$vlUserChoice-1]="<emptyString>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("isnew = ''")

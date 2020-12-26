@@ -9,7 +9,7 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		
 		$colDistinctPartnerOnly:=Form:C1466.colKb4dCom.distinct("partnerOnly")
-		$colDistinctPartnerOnly.insert(0; "<Filter OFF>")
+		$colDistinctPartnerOnly.insert(0; "<Clear all filters>")
 		$colDistinctPartnerOnly.insert(1; "<emptyString>")
 		$colDistinctPartnerOnly.insert(2; "<null>")
 		$vtItems:=$colDistinctPartnerOnly.join(Char:C90(13); ck ignore null or empty:K85:5)
@@ -26,10 +26,11 @@ Case of
 			: ($vlUserChoice>$colDistinctPartnerOnly.length)
 				BEEP:C151
 				
-			: ($colDistinctPartnerOnly[$vlUserChoice-1]="<Filter OFF>")
+			: ($colDistinctPartnerOnly[$vlUserChoice-1]="<Clear all filters>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
 				OBJECT SET TITLE:C194(*; "oBtnFilterPartnerOnly"; "partnerOnly")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterPartnerOnly"; "Filter partnerOnly")
+				clearKb4dFilters
 				
 			: ($colDistinctPartnerOnly[$vlUserChoice-1]="<emptyString>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("partnerOnly = ''")

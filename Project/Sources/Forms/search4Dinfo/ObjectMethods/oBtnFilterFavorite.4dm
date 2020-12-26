@@ -9,7 +9,7 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		
 		$colDistinctFavorite:=Form:C1466.colKb4dCom.distinct("favorite")
-		$colDistinctFavorite.insert(0; "<Filter OFF>")
+		$colDistinctFavorite.insert(0; "<Clear all filters>")
 		$colDistinctFavorite.insert(1; "<emptyString>")
 		$colDistinctFavorite.insert(2; "<null>")
 		$vtItems:=$colDistinctFavorite.join(Char:C90(13); ck ignore null or empty:K85:5)
@@ -26,10 +26,11 @@ Case of
 			: ($vlUserChoice>$colDistinctFavorite.length)
 				BEEP:C151
 				
-			: ($colDistinctFavorite[$vlUserChoice-1]="<Filter OFF>")
+			: ($colDistinctFavorite[$vlUserChoice-1]="<Clear all filters>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
 				OBJECT SET TITLE:C194(*; "oBtnFilterFavorite"; "favorite")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterFavorite"; "Filter favorite")
+				clearKb4dFilters
 				
 			: ($colDistinctFavorite[$vlUserChoice-1]="<emptyString>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("favorite = ''")
@@ -40,11 +41,6 @@ Case of
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("favorite = null")
 				OBJECT SET TITLE:C194(*; "oBtnFilterFavorite"; "#"+"<null>")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterFavorite"; "favorite=\""+"<null>"+"\"")
-				
-			: (($vlUserChoice=1) & ($colDistinctFavorite[0]="Filter OFF"))
-				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
-				OBJECT SET TITLE:C194(*; "oBtnFilterFavorite"; "favorite")
-				OBJECT SET HELP TIP:C1181(*; "oBtnFilterFavorite"; "Filter favorite")
 				
 			Else 
 				If ($colDistinctFavorite[$vlUserChoice-1]="true")

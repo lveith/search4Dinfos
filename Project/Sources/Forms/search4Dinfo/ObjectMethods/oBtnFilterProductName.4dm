@@ -9,7 +9,7 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		
 		$colDistinctProductName:=Form:C1466.colKb4dCom.distinct("productName")
-		$colDistinctProductName.insert(0; "<Filter OFF>")
+		$colDistinctProductName.insert(0; "<Clear all filters>")
 		$colDistinctProductName.insert(1; "<emptyString>")
 		$colDistinctProductName.insert(2; "<null>")
 		$vtItems:=$colDistinctProductName.join(Char:C90(13); ck ignore null or empty:K85:5)
@@ -26,10 +26,11 @@ Case of
 			: ($vlUserChoice>$colDistinctProductName.length)
 				BEEP:C151
 				
-			: ($colDistinctProductName[$vlUserChoice-1]="<Filter OFF>")
+			: ($colDistinctProductName[$vlUserChoice-1]="<Clear all filters>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dComALL
 				OBJECT SET TITLE:C194(*; "oBtnFilterProductName"; "productName")
 				OBJECT SET HELP TIP:C1181(*; "oBtnFilterProductName"; "Filter productName")
+				clearKb4dFilters
 				
 			: ($colDistinctProductName[$vlUserChoice-1]="<emptyString>")
 				Form:C1466.colKb4dCom:=Form:C1466.colKb4dCom.query("productName = ''")
