@@ -1451,9 +1451,9 @@
 				"oColKb4dCom": {
 					"type": "listbox",
 					"left": 7,
-					"top": 31,
+					"top": 54,
 					"width": 1034,
-					"height": 306,
+					"height": 283,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -1619,7 +1619,7 @@
 					"enterable": true,
 					"contextMenu": "none",
 					"fill": "automatic",
-					"placeholder": "Search for any words",
+					"placeholder": "Search live online for any words",
 					"dataSource": "Form:C1466.searchValueKb4dCom",
 					"sizingX": "fixed",
 					"borderStyle": "none"
@@ -1680,7 +1680,7 @@
 					"contextMenu": "none",
 					"fill": "transparent",
 					"placeholder": "current page title",
-					"dataSource": "String:C10(Form:C1466.kb4dComCurrSel.length)+\" / \"+String:C10(Form:C1466.colKb4dCom.length)",
+					"dataSource": "String:C10(Form:C1466.kb4dComCurrSel.length)+\" / \"+String:C10(Form:C1466.colKb4dCom.length)+\" / \"+String:C10(Form:C1466.colKb4dComALL.length)",
 					"borderStyle": "none",
 					"textAlign": "left",
 					"sizingX": "fixed",
@@ -1689,6 +1689,194 @@
 					"stroke": "#808080",
 					"focusable": false,
 					"dataSourceTypeHint": "text"
+				},
+				"oSearchTag1Kb4dCom": {
+					"type": "input",
+					"left": 6,
+					"top": 32,
+					"width": 154,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Filter word (wild@card)",
+					"dataSource": "Form:C1466.searchTag1Kb4dCom",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				},
+				"oBtnSearchTagKb4dCom": {
+					"type": "button",
+					"text": "Filter",
+					"top": 30,
+					"left": 480,
+					"width": 51,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "regular",
+					"method": "ObjectMethods/oBtnSearchTagKb4dCom.4dm",
+					"tooltip": "Filter with left-words"
+				},
+				"oSearchTag2Kb4dCom": {
+					"type": "input",
+					"left": 164,
+					"top": 32,
+					"width": 154,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Filter word (wild@card)",
+					"dataSource": "Form:C1466.searchTag2Kb4dCom",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				},
+				"oSearchTag3Kb4dCom": {
+					"type": "input",
+					"left": 322,
+					"top": 32,
+					"width": 154,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Filter word (wild@card)",
+					"dataSource": "Form:C1466.searchTag3Kb4dCom",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				},
+				"oBtnExpKb4dCom": {
+					"type": "button",
+					"top": 1,
+					"left": 555,
+					"width": 123,
+					"height": 24,
+					"sizingX": "fixed",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/ChooseFormPage"
+					},
+					"text": "Export Kb4dCom",
+					"fontFamily": "System Font Regular",
+					"fontSize": 10,
+					"focusable": false,
+					"method": "ObjectMethods/oBtnExpKb4dCom.4dm",
+					"events": [
+						"onClick"
+					],
+					"right": 678,
+					"fontWeight": "normal"
+				},
+				"oBtnImpKb4dCom": {
+					"type": "button",
+					"top": 1,
+					"left": 685,
+					"width": 123,
+					"height": 24,
+					"sizingX": "fixed",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/ChooseFormPage"
+					},
+					"text": "Import Kb4dCom",
+					"fontFamily": "System Font Regular",
+					"fontSize": 10,
+					"focusable": false,
+					"method": "ObjectMethods/oBtnImpKb4dCom.4dm",
+					"events": [
+						"onClick"
+					],
+					"right": 808,
+					"fontWeight": "normal"
+				},
+				"oBtnFilterAssettype": {
+					"type": "button",
+					"text": "assettype",
+					"top": 32,
+					"left": 555,
+					"width": 76,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterAssettype.4dm",
+					"fontSize": 9,
+					"focusable": false
+				},
+				"oBtnFilterProductName": {
+					"type": "button",
+					"text": "productName",
+					"top": 32,
+					"left": 630,
+					"width": 96,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterProductName.4dm",
+					"fontSize": 9,
+					"focusable": false
+				},
+				"oBtnFilterProductVersion": {
+					"type": "button",
+					"text": "productVersion",
+					"top": 32,
+					"left": 725,
+					"width": 105,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterProductVersion.4dm",
+					"fontSize": 9,
+					"focusable": false
+				},
+				"oBtnFilterPartnerOnly": {
+					"type": "button",
+					"text": "partnerOnly",
+					"top": 32,
+					"left": 829,
+					"width": 87,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterPartnerOnly.4dm",
+					"fontSize": 9,
+					"focusable": false
+				},
+				"oBtnFilterFavorite": {
+					"type": "button",
+					"text": "favorite",
+					"top": 32,
+					"left": 915,
+					"width": 62,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterFavorite.4dm",
+					"fontSize": 9,
+					"focusable": false
+				},
+				"oBtnFilterIsNew": {
+					"type": "button",
+					"text": "isnew",
+					"top": 32,
+					"left": 976,
+					"width": 62,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"style": "bevel",
+					"method": "ObjectMethods/oBtnFilterIsNew.4dm",
+					"fontSize": 9,
+					"focusable": false
 				}
 			}
 		},
@@ -1750,9 +1938,215 @@
 					]
 				}
 			}
+		},
+		{
+			"objects": {
+				"oColLocalLib": {
+					"type": "listbox",
+					"left": 7,
+					"top": 52,
+					"width": 1034,
+					"height": 285,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.colLocalLib",
+					"currentItemSource": "Form:C1466.localLibCurrEl",
+					"currentItemPositionSource": "Form:C1466.localLibCurrPos",
+					"selectedItemsSource": "Form:C1466.localLibCurrSel",
+					"method": "ObjectMethods/oColLocalLib.4dm",
+					"bottom": 337,
+					"columns": [
+						{
+							"header": {
+								"text": "Key",
+								"name": "Kopf1"
+							},
+							"name": "Spalte1",
+							"footer": {
+								"name": "Fußteil18"
+							},
+							"dataSource": "This:C1470.key",
+							"fontWeight": "bold"
+						},
+						{
+							"header": {
+								"name": "Kopf7",
+								"text": "URL"
+							},
+							"name": "Spalte7",
+							"dataSource": "This:C1470.url",
+							"width": 182,
+							"footer": {
+								"name": "Fußteil21"
+							}
+						},
+						{
+							"header": {
+								"name": "Kopf5",
+								"text": "Comment"
+							},
+							"name": "Spalte5",
+							"dataSource": "This:C1470.cmt",
+							"width": 575,
+							"footer": {
+								"name": "Fußteil19"
+							}
+						},
+						{
+							"header": {
+								"name": "Kopf6",
+								"text": "Tags"
+							},
+							"name": "Spalte6",
+							"dataSource": "This:C1470.tag",
+							"footer": {
+								"name": "Fußteil20"
+							}
+						}
+					]
+				},
+				"oBtnExpLocalLib": {
+					"type": "button",
+					"top": 1,
+					"left": 555,
+					"width": 123,
+					"height": 24,
+					"sizingX": "fixed",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/ChooseFormPage"
+					},
+					"text": "Export local library",
+					"fontFamily": "System Font Regular",
+					"fontSize": 10,
+					"focusable": false,
+					"method": "ObjectMethods/oBtnExpLocalLib.4dm",
+					"events": [
+						"onClick"
+					],
+					"right": 678,
+					"fontWeight": "normal"
+				},
+				"oBtnImpLocalLib": {
+					"type": "button",
+					"top": 1,
+					"left": 685,
+					"width": 123,
+					"height": 24,
+					"sizingX": "fixed",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/ChooseFormPage"
+					},
+					"text": "Import local library",
+					"fontFamily": "System Font Regular",
+					"fontSize": 10,
+					"focusable": false,
+					"method": "ObjectMethods/oBtnImpLocalLib.4dm",
+					"events": [
+						"onClick"
+					],
+					"right": 808,
+					"fontWeight": "normal"
+				},
+				"Splitter3": {
+					"type": "splitter",
+					"left": 0,
+					"top": 342,
+					"width": 1041,
+					"height": 3,
+					"sizingX": "grow"
+				},
+				"oWaLocalLib": {
+					"type": "webArea",
+					"left": 6,
+					"top": 350,
+					"width": 1034,
+					"height": 349,
+					"method": "ObjectMethods/oWaLocalLib.4dm",
+					"webEngine": "embedded",
+					"dataSource": "gWaLocalLib",
+					"methodsAccessibility": "all",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"borderStyle": "double",
+					"events": [
+						"onLoad",
+						"onUnload",
+						"onBeginURLLoading",
+						"onURLResourceLoading",
+						"onEndURLLoading",
+						"onURLLoadingError",
+						"onURLFiltering",
+						"onOpenExternalLink",
+						"onWindowOpeningDenied"
+					]
+				},
+				"oSearchTag1LocalLib": {
+					"type": "input",
+					"left": 6,
+					"top": 7,
+					"width": 157,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Search a word",
+					"dataSource": "Form:C1466.searchTag1LocalLib",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				},
+				"oBtnSearchTagLocalLib": {
+					"type": "button",
+					"text": "🔎",
+					"top": 6,
+					"left": 495,
+					"width": 19,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "flat",
+					"method": "ObjectMethods/oBtnSearchTagLocalLib.4dm"
+				},
+				"oSearchTag2LocalLib": {
+					"type": "input",
+					"left": 167,
+					"top": 7,
+					"width": 157,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Search a word",
+					"dataSource": "Form:C1466.searchTag2LocalLib",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				},
+				"oSearchTag3LocalLib": {
+					"type": "input",
+					"left": 328,
+					"top": 7,
+					"width": 157,
+					"height": 17,
+					"enterable": true,
+					"contextMenu": "none",
+					"fill": "automatic",
+					"placeholder": "Search a word",
+					"dataSource": "Form:C1466.searchTag3LocalLib",
+					"sizingX": "fixed",
+					"borderStyle": "none"
+				}
+			}
 		}
 	],
-	"geometryStamp": 5067,
+	"geometryStamp": 5832,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

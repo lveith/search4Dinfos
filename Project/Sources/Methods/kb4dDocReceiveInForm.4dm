@@ -39,4 +39,6 @@ Case of
 		End if 
 End case 
 
+Form:C1466.colKb4dComALL:=Form:C1466.colKb4dCom
+
 // - EOF -

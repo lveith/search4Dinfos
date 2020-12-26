@@ -110,10 +110,15 @@ Case of
 		Form:C1466.cbtGithubTag4dexapp:="4d-example-application"
 		
 		Form:C1466.kbAssetid:=0
+		Form:C1466.searchTag1Kb4dCom:=""
+		Form:C1466.searchTag2Kb4dCom:=""
+		Form:C1466.searchTag3Kb4dCom:=""
 		Form:C1466.kb4dComCurrEl:=New object:C1471
 		Form:C1466.kb4dComCurrPos:=0
 		Form:C1466.kb4dComCurrSel:=New collection:C1472
 		Form:C1466.colKb4dCom:=New collection:C1472
+		importKb4dComArchiv("ALL_Results5958_20201226T1136_4Dv18R5b259387(64bit).DTA")
+		Form:C1466.colKb4dComALL:=Form:C1466.colKb4dCom
 		Form:C1466.searchValueKb4dCom:=""
 		
 		// WA SET URL FILTERS
@@ -148,6 +153,7 @@ Case of
 		//WA OPEN URL(*;"oWaGithub";getGithubSearchUrl)
 		
 		WA OPEN URL:C1020(*; "oWaKb4dCom"; "about:blank")
+		WA OPEN URL:C1020(*; "oWaLocalLib"; "about:blank")
 		
 		// http://www.googleguide.com
 		Form:C1466.colGoogleGuide:=getColGoogleGuide
@@ -158,10 +164,18 @@ Case of
 		Form:C1466.toggleTopBar:=False:C215
 		Form:C1466.toggleLeftBar:=False:C215
 		
+		Form:C1466.localLibLastCurrId:=""
+		Form:C1466.searchTag1LocalLib:=""
+		Form:C1466.searchTag2LocalLib:=""
+		Form:C1466.searchTag3LocalLib:=""
+		Form:C1466.colLocalLib:=New collection:C1472
+		Form:C1466.colLocalLibALL:=Form:C1466.colLocalLib
+		
 	: (Form event code:C388=On Unload:K2:2)
 		WA OPEN URL:C1020(*; "oWaGoogle"; "about:blank")  // prevent from adopting previous wa-session as start-default
 		WA OPEN URL:C1020(*; "oWaGithub"; "about:blank")
 		WA OPEN URL:C1020(*; "oWaKb4dCom"; "about:blank")
+		WA OPEN URL:C1020(*; "oWaLocalLib"; "about:blank")
 		
 End case 
 

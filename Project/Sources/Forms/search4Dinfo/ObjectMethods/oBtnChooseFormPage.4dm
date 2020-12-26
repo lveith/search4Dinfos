@@ -11,10 +11,11 @@ Case of
 		$vtItems:=$vtItems+"Github"+";"
 		$vtItems:=$vtItems+"kb.4d.com"+";"
 		$vtItems:=$vtItems+"googleguide"+";"
+		$vtItems:=$vtItems+"Local-Info-Library"+";"
 		$vlUserChoice:=Pop up menu:C542($vtItems)
 		If ($vlUserChoice>0)
 			FORM GOTO PAGE:C247($vlUserChoice)
-			OBJECT SET TITLE:C194(*;"oBtnChooseFormPage";Split string:C1554($vtItems;";")[$vlUserChoice-1])
+			OBJECT SET TITLE:C194(*; "oBtnChooseFormPage"; Split string:C1554($vtItems; ";")[$vlUserChoice-1])
 		End if 
 		
 End case 

@@ -13,6 +13,9 @@ C_TEXT:C284(setWaContentToInfo; $1)
 //search4DinfosStartMain
 C_TEXT:C284(search4DinfosStartMain; $1)
 
+//importKb4dComArchiv
+C_TEXT:C284(importKb4dComArchiv; $1)
+
 //getGithubSearchUrl
 C_TEXT:C284(getGithubSearchUrl; $0)
 
