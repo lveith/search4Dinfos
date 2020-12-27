@@ -15,9 +15,9 @@ Case of
 		
 	: (Form event code:C388=On URL Loading Error:K2:48)
 		IDLE:C311
-		If (WA Get current URL:C1025(*; "oWaLocalLib")#"https://livedoc.4d.com/@")
-			setWaContentToInfo("oWaLocalLib")
-		End if 
+		//If (WA Get current URL(*; "oWaLocalLib")#"https://livedoc.4d.com/@")
+		setWaContentToInfo("oWaLocalLib")
+		//End if 
 		
 	: (Form event code:C388=On URL Filtering:K2:49)
 		IDLE:C311

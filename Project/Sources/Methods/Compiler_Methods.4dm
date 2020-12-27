@@ -36,3 +36,6 @@ C_TEXT:C284(getGoogleSearchUrl; $2)
 
 //isGithubLangActive
 C_BOOLEAN:C305(isGithubLangActive; $0)
+
+//getColLocalLib
+C_COLLECTION:C1488(getColLocalLib; $0)

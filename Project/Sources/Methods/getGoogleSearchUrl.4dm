@@ -85,6 +85,36 @@ If ($kindReduce="")
 		$opOR:="+OR+"
 	End if 
 	
+	If (Form:C1466.cbMailArchiveCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtMailArchiveCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbBugs4dCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtBugs4dCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cbDdddMettreDe>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbtDdddMettreDe
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cb4dJapanCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbt4dJapanCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cb4dDeveloppezCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbt4dDeveloppezCom
+		$opOR:="+OR+"
+	End if 
+	
+	If (Form:C1466.cb4dTodayCom>0)
+		$googleSearchUrl:=$googleSearchUrl+$opOR+"site%3A"+Form:C1466.cbt4dTodayCom
+		$opOR:="+OR+"
+	End if 
+	
 End if 
 
 // --------

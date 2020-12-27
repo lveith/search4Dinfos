@@ -1,4 +1,4 @@
-// OM: "search4Dinfo".oCbKb4dCom
+// OM: "search4Dinfo".oCbBugs4dCom
 
 Case of 
 	: (Form event code:C388=On Clicked:K2:4)

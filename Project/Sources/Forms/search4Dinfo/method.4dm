@@ -14,6 +14,12 @@ Case of
 		Form:C1466.cbStackoverflowCom:=0
 		Form:C1466.cbFtpPublic4dFr:=0
 		Form:C1466.cbNabbleCom:=0
+		Form:C1466.cbMailArchiveCom:=0
+		Form:C1466.cbBugs4dCom:=0
+		Form:C1466.cbDdddMettreDe:=0
+		Form:C1466.cb4dJapanCom:=0
+		Form:C1466.cb4dDeveloppezCom:=0
+		Form:C1466.cb4dTodayCom:=0
 		
 		Form:C1466.cbt4dCom:="4d.com"
 		Form:C1466.cbtDoc4dCom:="doc.4d.com"
@@ -27,6 +33,12 @@ Case of
 		Form:C1466.cbtStackoverflowCom:="stackoverflow.com"
 		Form:C1466.cbtFtpPublic4dFr:="ftp-public.4d.fr"
 		Form:C1466.cbtNabbleCom:="4d.1045681.n5.nabble.com"
+		Form:C1466.cbtMailArchiveCom:="mail-archive.com/4d_tech@lists.4d.com"
+		Form:C1466.cbtBugs4dCom:="bugs.4d.com"
+		Form:C1466.cbtDdddMettreDe:="dddd.mettre.de"
+		Form:C1466.cbt4dJapanCom:="4d-japan.com"
+		Form:C1466.cbt4dDeveloppezCom:="4d.developpez.com"
+		Form:C1466.cbt4dTodayCom:="4dtoday.com"
 		
 		Form:C1466.currUrlGoogle:=""
 		Form:C1466.currPageTitleGoogle:=""
@@ -175,72 +187,7 @@ Case of
 		Form:C1466.searchTag1LocalLib:=""
 		Form:C1466.searchTag2LocalLib:=""
 		Form:C1466.searchTag3LocalLib:=""
-		If (True:C214)
-			C_OBJECT:C1216($obj)
-			Form:C1466.colLocalLib:=New collection:C1472
-			
-			$obj:=New object:C1471
-			$obj.key:="kb4D78586"
-			$obj.url:="*kb4D/4DKnowledgeBaseDetail78586.html"
-			$obj.cmt:="Tech Tip: Sending Un-Hashed Password with Open Datastore"
-			$obj.tag:="'4d' 'Mac' 'Win' 'Sending' 'Un-Hashed' 'Password'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="kb4D78601"
-			$obj.url:="*kb4D/4DKnowledgeBaseDetail78601.html"
-			$obj.cmt:="Tech Tip: Utility Method to Get Web Area's Web Rendering Engine"
-			$obj.tag:="'4d' 'Mac' 'Win' 'Web-Area' 'web' 'area', 'Rendering', 'Engine'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="note4DCmdProps"
-			$obj.url:="*notes/4DCommandProperties.html"
-			$obj.cmt:="4D-Command-Properties"
-			$obj.tag:="'4d' '4dv18R5' 'Mac' 'Win' 'Command' 'Command-Properties' 'Properties'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="note4DCmdNotThreadsafe"
-			$obj.url:="*notes/4Dv18R3Commands_716CMDsNotThreadsafe.html"
-			$obj.cmt:="4D-Command-Not-Threadsafe"
-			$obj.tag:="'4d' '4dv18R3' 'Mac' 'Win' 'Command' 'Threadsafe'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="note4DCmdMemLeaks"
-			$obj.url:="*notes/4Dv18R3Commands_CMDsMemoryLeaks.html"
-			$obj.cmt:="4D-Commands-Memory-Leaks"
-			$obj.tag:="'4d' '4dv18R3' 'Mac' 'Win' 'Command' 'Memory-Leaks' 'Memory' 'Leaks'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_US"
-			$obj.url:="https://us.4d.com"
-			$obj.cmt:="4D homepage (United States, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'united-states' 'us' 'usa' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_FR"
-			$obj.url:="https://fr.4d.com"
-			$obj.cmt:="4D homepage (France, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'france' 'fr' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			$obj:=New object:C1471
-			$obj.key:="4dCom_DE"
-			$obj.url:="https://de.4d.com"
-			$obj.cmt:="4D homepage (Deutschland, Startpage)"
-			$obj.tag:="'4d' 'homepage' 'deutschland' 'de' 'german' 'startpage'"
-			Form:C1466.colLocalLib.push($obj)
-			
-			Form:C1466.colLocalLibALL:=Form:C1466.colLocalLib
-			
-		Else 
-			Form:C1466.colLocalLib:=New collection:C1472
-			
-		End if 
+		Form:C1466.colLocalLib:=getColLocalLib
 		Form:C1466.colLocalLibALL:=Form:C1466.colLocalLib
 		
 	: (Form event code:C388=On Unload:K2:2)
