@@ -78,7 +78,7 @@ Case of
 		$obj.typ:="URL Loading Error #"+String:C10($errorCode)+" "+$description
 		$obj.content:=$url
 		Form:C1466.colPageContGithub.push($obj)
-		If (True:C214)
+		If (False:C215)
 			setWaContentToInfo("oWaGithub")
 		End if 
 		

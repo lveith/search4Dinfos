@@ -116,7 +116,9 @@ Case of
 		$obj.content:=$url
 		Form:C1466.colPageContGoogle.push($obj)
 		If ($url#"https://www.google.com/sorry/index@")
-			setWaContentToInfo("oWaGoogle")
+			If (False:C215)
+				setWaContentToInfo("oWaGoogle")
+			End if 
 		End if 
 		
 	: (Form event code:C388=On URL Filtering:K2:49)

@@ -15,7 +15,7 @@ Case of
 		
 	: (Form event code:C388=On URL Loading Error:K2:48)
 		IDLE:C311
-		If (True:C214)
+		If (False:C215)
 			setWaContentToInfo("oWaKb4dCom")
 		End if 
 		
