@@ -13,6 +13,9 @@ C_TEXT:C284(setWaContentToInfo; $1)
 //search4DinfosStartMain
 C_TEXT:C284(search4DinfosStartMain; $1)
 
+//getColLocalLib
+C_COLLECTION:C1488(getColLocalLib; $0)
+
 //importKb4dComArchiv
 C_TEXT:C284(importKb4dComArchiv; $1)
 
@@ -36,6 +39,3 @@ C_TEXT:C284(getGoogleSearchUrl; $2)
 
 //isGithubLangActive
 C_BOOLEAN:C305(isGithubLangActive; $0)
-
-//getColLocalLib
-C_COLLECTION:C1488(getColLocalLib; $0)
