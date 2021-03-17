@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <title>Test target attribute</title>
+<head>
+</head>
+<body style="background-color: aliceblue;">
+  <h1>Test target attribute</h1>
+
+  <iframe src="TestTargetAttrFrame1.html" name="frame1" height="290" width="45%" style="background-color: rgb(130, 132, 238); border: 4px dashed;"><p>Browser cannot display iframe!</p></iframe>
+  <iframe src="TestTargetAttrFrame2.html" name="frame2" height="290" width="45%%" style="background-color: rgb(238, 130, 130); border: 4px dashed;"><p>Browser cannot display iframe!</p></iframe>
+
+  <ul>
+    <li><a href="TestTargetAttribute.html" target="_self"><code lang="html5">target=&quot;_self&quot;</code></a></li>
+    <li><a href="TestTargetAttribute.html" target="_parent"><code lang="html5">target=&quot;_parent&quot;</code></a></li>
+    <li><a href="TestTargetAttribute.html" target="_top"><code lang="html5">target=&quot;_top&quot;</code></a></li>
+    <li><a href="TestTargetAttribute.html" target="_blank"><code lang="html5">target=&quot;_blank&quot;</code></a></li>
+    <li><a href="TestTargetAttrFrame1.html" target="frame1"><code lang="html5">target=&quot;frame1&quot;</code></a></li>
+    <li><a href="TestTargetAttrFrame1.html" target="frameSub1a"><code lang="html5">target=&quot;frame1Sub1a&quot;</code></a></li>
+    <li><a href="TestTargetAttrFrame1.html" target="frame2"><code lang="html5">target=&quot;frame2&quot;</code></a></li>
+  </ul>
+
+</body>
+</html>
